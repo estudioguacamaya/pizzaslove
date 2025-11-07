@@ -1,5 +1,4 @@
-
-
+<!DOCTYPE html>
 <html lang="es">
  <head>
   <meta charset="utf-8"/>
@@ -12,7 +11,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <!-- Usando la fuente Inter para un aspecto moderno y limpio -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
   <style>
+    
    /* Estilos personalizados para un mejor control visual */
     body {
         font-family: 'Inter', sans-serif;
@@ -43,22 +44,6 @@
         scrollbar-width: none;  /* Firefox */
     }
 
-    /* Estilos para el banner de descuento */
-    .discount-banner {
-        background-size: cover;
-        background-position: center;
-        border-radius: 0.75rem; /* rounded-xl */
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-        height: 150px; /* Altura específica para el banner */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 1.5rem; /* text-2xl */
-    }
-
     /* Animaciones sutiles para los elementos de producto */
     .product-card {
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -76,12 +61,10 @@
         border-radius: 0.75rem;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
-
     .slider-wrapper {
         display: flex;
         transition: transform 0.5s ease-in-out;
     }
-
     .slider-item {
         min-width: 100%;
         box-sizing: border-box;
@@ -96,14 +79,11 @@
         font-size: 1.5rem;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para el texto */
     }
-
-    /* Ajuste para que el slider sea más grande en desktop */
     @media (min-width: 1024px) { /* lg breakpoint */
         .slider-item {
             height: 300px; /* Mayor altura para pantallas de escritorio */
         }
     }
-
     .slider-dots {
         position: absolute;
         bottom: 10px;
@@ -112,7 +92,6 @@
         display: flex;
         gap: 8px;
     }
-
     .dot {
         width: 10px;
         height: 10px;
@@ -121,7 +100,6 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-
     .dot.active {
         background-color: white;
     }
@@ -131,49 +109,20 @@
         border-bottom-width: 3px;
     }
 
-    /* Corrección para mobile: Asegurar que el header-info no se superponga */
-    @media (max-width: 640px) {
-        header {
-            height: 280px; /* Aumenta la altura del header para acomodar el contenido */
-        }
-        .header-info {
-            position: relative; /* Cambiado a relativo para que fluya con el documento */
-            margin-top: -3rem; /* Ajuste para subir el bloque de info sin superposición */
-            padding-bottom: 2rem; /* Más espacio en la parte inferior del bloque de info */
-            border-bottom-left-radius: 1.5rem; /* Añadir rounded-b */
-            border-bottom-right-radius: 1.5rem; /* Añadir rounded-b */
-            margin-bottom: 0; /* Eliminar margen negativo para evitar ocultamiento de texto */
-        }
-        .main-content {
-            padding-top: 1rem; /* Reducir el padding superior para mobile */
-        }
-        .status-button {
-            margin-top: 0.5rem; /* Espacio extra para el botón de estado en mobile */
-            font-size: 0.875rem; /* Tamaño de fuente más pequeño para mobile */
-            padding: 0.3rem 0.7rem; /* Padding ajustado para mobile */
-        }
-        /* Ajuste para el espaciado de los iconos flotantes en mobile */
-        .floating-buttons {
-            bottom: 6rem; /* Subir los botones para que no choquen con el footer en mobile */
-            right: 1rem; /* Ajuste a la derecha */
-        }
-    }
-
     /* Estilos para el modal del carrito */
     .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1000; /* Sit on top */
+        display: none;
+        position: fixed;
+        z-index: 1000;
         left: 0;
         top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
         justify-content: center;
         align-items: center;
     }
-
     .modal-content {
         background-color: #fefefe;
         margin: auto;
@@ -183,31 +132,28 @@
         position: relative;
         width: 90%;
         max-width: 600px;
-        max-height: 90vh; /* Limitar la altura del modal */
-        overflow-y: auto; /* Habilitar scroll interno si el contenido es largo */
+        max-height: 90vh;
+        overflow-y: auto;
         animation-name: animatetop;
         animation-duration: 0.4s;
     }
-
-    /* Animación de entrada para el modal */
     @keyframes animatetop {
         from {top: -300px; opacity: 0}
         to {top: 0; opacity: 1}
     }
-
     .close-button {
         color: #aaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
     }
-
     .close-button:hover,
     .close-button:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
     }
+
     /* Estilos para los controles de cantidad mejorados */
     .quantity-controls {
         display: flex;
@@ -215,13 +161,12 @@
         justify-content: center;
         width: 100%;
         margin-top: 0.5rem;
-        margin-bottom: 0.5rem; /* Espacio adicional para las notas */
+        margin-bottom: 0.5rem;
     }
-
     .quantity-button {
         background-color: #ef4444; /* red-500 */
         color: white;
-        font-size: 1.25rem; /* text-xl */
+        font-size: 1.25rem;
         font-weight: bold;
         width: 40px;
         height: 40px;
@@ -233,47 +178,109 @@
         transition: background-color 0.2s ease, transform 0.2s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
     .quantity-button:hover {
         background-color: #dc2626; /* red-600 */
         transform: scale(1.05);
     }
-
     .quantity-input-field {
-        width: 60px; /* Ancho fijo para el campo de cantidad */
+        width: 60px;
         text-align: center;
         padding: 0.5rem;
         margin: 0 0.5rem;
         border: 1px solid #d1d5db; /* gray-300 */
         border-radius: 0.375rem; /* rounded-md */
         font-size: 1rem;
-        -moz-appearance: textfield; /* Hide Firefox stepper arrows */
+        -moz-appearance: textfield;
     }
-    /* Hide Chrome, Safari, Edge, Opera stepper arrows */
     .quantity-input-field::-webkit-outer-spin-button,
     .quantity-input-field::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
+    .form-input-error {
+        border-color: #ef4444; /* red-500 */
+        box-shadow: 0 0 0 1px #ef4444;
+    }
 
+    /* Estilos para las notificaciones Toast */
+    #toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .toast {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        color: white;
+        font-weight: 500;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        transform: translateX(120%);
+        transition: transform 0.5s ease-in-out;
+    }
+    .toast.show {
+        transform: translateX(0);
+    }
+    .toast.success {
+        background-color: #16a34a; /* green-600 */
+    }
+    .toast.error {
+        background-color: #dc2626; /* red-600 */
+    }
+    .toast-icon {
+        font-size: 1.5rem;
+    }
+
+    /* Correcciones para mobile y responsive */
+    @media (max-width: 640px) {
+        header {
+            height: auto;
+        }
+        .header-info {
+            position: relative;
+            margin-top: -4rem;
+            padding-bottom: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            margin-bottom: 0;
+        }
+        .main-content {
+            padding-top: 1rem;
+        }
+        .status-button {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            padding: 0.3rem 0.7rem;
+        }
+        .floating-buttons {
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
+    }
   </style>
  </head>
  <body class="bg-gray-50">
   <!-- Header principal con imagen de fondo y elementos superpuestos -->
   <header class="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden">
-   <img alt="Imagen de fondo con m\u00FAltiples hamburguesas apiladas y una pared de ladrillos detr\u00E1s" class="w-full h-full object-cover" height="350" src="https://storage.googleapis.com/a1aa/image/51eaa911-562d-4bc6-d0cf-d859d97d1590.jpg" width="1920"/>
+   <img alt="Imagen de fondo con múltiples hamburguesas apiladas y una pared de ladrillos detrás" class="w-full h-full object-cover" height="350" src="https://storage.googleapis.com/a1aa/image/51eaa911-562d-4bc6-d0cf-d859d97d1590.jpg" width="1920"/>
    <div class="absolute inset-0 bg-black opacity-30">
    </div>
-   <!-- Bot\u00F3n de iniciar sesi\u00F3n en la esquina superior derecha del header -->
+   <!-- Botón de iniciar sesión en la esquina superior derecha del header -->
    <div class="absolute top-4 right-4">
     <button class="flex items-center gap-2 bg-white text-red-600 text-sm font-semibold px-4 py-2 rounded-full shadow-lg hover:bg-red-600 hover:text-white transition transform hover:scale-105 duration-300 ease-in-out">
      <i class="fas fa-user-circle">
      </i>
-     Iniciar Sesi\u00F3n
+     Iniciar Sesión
     </button>
    </div>
-   <!-- Secci\u00F3n principal de informaci\u00F3n del restaurante superpuesta al header -->
-   <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 bg-white bg-opacity-95 rounded-t-3xl shadow-xl -mb-12 sm:mb-0 z-10 mx-auto max-w-7xl header-info">
+   <!-- Sección principal de información del restaurante superpuesta al header -->
+   <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 bg-white bg-opacity-95 rounded-t-3xl shadow-xl z-10 mx-auto max-w-7xl header-info">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
      <div class="flex items-center gap-4">
       <!-- Logotipo circular de Pizzas Love con icono de pizza y texto -->
@@ -297,7 +304,7 @@
           San Juan de los Morros
          </span>
         </div>
-        <!-- Bot\u00F3n de estado del local (Abierto/Cerrado) -->
+        <!-- Botón de estado del local (Abierto/Cerrado) -->
         <span id="store-status" class="status-button px-3 py-1 rounded-full text-white text-xs font-semibold transition-colors duration-300 ease-in-out">
          <!-- El texto y el color se establecen con JavaScript -->
         </span>
@@ -319,7 +326,7 @@
        </button>
       </div>
       <div class="relative inline-block text-left">
-       <!-- El span ahora es un enlace que lleva a la direcci\u00F3n de Google Maps -->
+       <!-- El span ahora es un enlace que lleva a la dirección de Google Maps -->
        <a class="inline-flex justify-center w-full rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 transition" href="https://maps.app.goo.gl/UZD7aPgaLW9ne2DF7" rel="noopener noreferrer" target="_blank">
         Retirar en el Local (Pick Up)
        </a>
@@ -338,10 +345,10 @@
     </div>
    </div>
   </header>
-  <!-- Men\u00FA de navegaci\u00F3n fijo que aparece al hacer scroll -->
+  <!-- Menú de navegación fijo que aparece al hacer scroll -->
   <nav id="sticky-navbar" class="fixed top-0 left-0 right-0 bg-white shadow-md p-4 flex items-center justify-between z-50 hidden-on-scroll">
    <div class="flex items-center gap-4 ml-4">
-    <img alt="Logotipo circular de Pizzas Love en la barra de navegaci\u00F3n" class="w-10 h-10 rounded-full" height="40" src="./logo.png" width="40"/>
+    <img alt="Logotipo circular de Pizzas Love en la barra de navegación" class="w-10 h-10 rounded-full" height="40" src="./logo.png" width="40"/>
     <span class="text-lg font-bold text-gray-900">
      Pizzas Love
     </span>
@@ -362,24 +369,24 @@
     </h2>
     <div class="slider-container">
      <div class="slider-wrapper" id="slider-wrapper">
-      <div class="slider-item" style="background-image: url('./pizzaslove3.png.jpg');">
+      <div class="slider-item" style="background-image: url('https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg');">
        <p class="text-3xl sm:text-4xl">
-        \u00a1Feliz D\u00EDa del Padre!
-       </p>
-      </div>
-      <div class="slider-item" style="background-image: url('./pizzaslove2.png.jpg');">
-       <p class="text-3xl sm:text-4xl">
-        Detalle Especial para Pap\u00E1
+        ¡Navidad Pizzas Love!
        </p>
       </div>
       <div class="slider-item" style="background-image: url('https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg');">
        <p class="text-3xl sm:text-4xl">
-        \u00a1Env\u00EDo Gratis!
+        Detalle Especial en esta navidad
        </p>
       </div>
-      <div class="slider-item" style="background-image: url('https://placehold.co/1200x150/6A5ACD/ffffff?text=Oferta+3+-+Combo+Familiar');">
+      <div class="slider-item" style="background-image: url('https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg');">
        <p class="text-3xl sm:text-4xl">
-        Combo Familiar - \u00a1Ahorra!
+        ¡Envío Gratis!
+       </p>
+      </div>
+      <div class="slider-item" style="background-image: url('https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg');">
+       <p class="text-3xl sm:text-4xl">
+        Combo Familiar - ¡Ahorra!
        </p>
       </div>
      </div>
@@ -387,30 +394,30 @@
      </div>
     </div>
    </section>
-   <!-- Nueva Secci\u00F3n de COMBOS -->
+   <!-- Nueva Sección de COMBOS -->
    <section class="mt-12" id="combos">
     <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
      COMBOS
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
      <!-- COMBO #1 -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="1 Pizza Grande (salsa, jam\u00F3n, queso, 1 ingrediente adicional) + glup 1 litro" data-name="Combo #1" data-original-price="7.5" data-price="7.5">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="1 Pizza Grande (salsa, jamón, queso, 1 ingrediente adicional) + glup 1 litro" data-name="Combo #1" data-original-price="7.5" data-price="7.5">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        COMBO #1
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       1 Pizza Grande (salsa, jam\u00F3n, queso, 1 ingrediente adicional) + glup 1 litro
+       1 Pizza Grande (salsa, jamón, queso, 1 ingrediente adicional) + glup 1 litro
       </p>
-      <img alt="Combo de Pizzas Love" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 1: Pizza grande y bebida de 1 litro" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $7.5
+       $7.50
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -421,23 +428,23 @@
       </button>
      </div>
      <!-- COMBO #2 -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="1 Pizza Grande (salsa, jam\u00F3n, queso, 2 ingredientes adicionales) + glup 1 LT" data-name="Combo #2" data-original-price="8.5" data-price="8.5">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="1 Pizza Grande (salsa, jamón, queso, 2 ingredientes adicionales) + glup 1 LT" data-name="Combo #2" data-original-price="8.5" data-price="8.5">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        COMBO #2
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       1 Pizza Grande (salsa, jam\u00F3n, queso, 2 ingredientes adicionales) + glup 1 LT
+       1 Pizza Grande (salsa, jamón, queso, 2 ingredientes adicionales) + glup 1 LT
       </p>
-      <img alt="Combo de Pizzas Love" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 2: Pizza grande con dos ingredientes y bebida de 1 litro" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $8.5
+       $8.50
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -448,23 +455,23 @@
       </button>
      </div>
      <!-- COMBO #3 -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="2 Pizzas Grandes (salsa, jam\u00F3n, queso) + glup 2 litros" data-name="Combo #3" data-original-price="12" data-price="12">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="2 Pizzas Grandes (salsa, jamón, queso) + glup 2 litros" data-name="Combo #3" data-original-price="12" data-price="12">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        COMBO #3
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       2 Pizzas Grandes (salsa, jam\u00F3n, queso) + glup 2 litros
+       2 Pizzas Grandes (salsa, jamón, queso) + glup 2 litros
       </p>
-      <img alt="Combo de Pizzas Love" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 3: Dos pizzas grandes y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $12
+       $12.00
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -475,23 +482,23 @@
       </button>
      </div>
      <!-- COMBO #4 -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="2 Pizzas Grandes (salsa, jam\u00F3n, queso, 1 ingrediente adicional) + glup 2 litros" data-name="Combo #4" data-original-price="14" data-price="14">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="2 Pizzas Grandes (salsa, jamón, queso, 1 ingrediente adicional) + glup 2 litros" data-name="Combo #4" data-original-price="14" data-price="14">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        COMBO #4
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       2 Pizzas Grandes (salsa, jam\u00F3n, queso, 1 ingrediente adicional) + glup 2 litros
+       2 Pizzas Grandes (salsa, jamón, queso, 1 ingrediente adicional) + glup 2 litros
       </p>
-      <img alt="Combo de Pizzas Love" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 4: Dos pizzas grandes con un ingrediente y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $14
+       $14.00
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -502,23 +509,23 @@
       </button>
      </div>
      <!-- COMBO #5 -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="2 Pizzas Grandes (salsa, jam\u00F3n, queso, 2 ingredientes adicionales) + glup 2 litros" data-name="Combo #5" data-original-price="16" data-price="16">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="2 Pizzas Grandes (salsa, jamón, queso, 2 ingredientes adicionales) + glup 2 litros" data-name="Combo #5" data-original-price="16" data-price="16">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        COMBO #5
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       2 Pizzas Grandes (salsa, jam\u00F3n, queso, 2 ingredientes adicionales) + glup 2 litros
+       2 Pizzas Grandes (salsa, jamón, queso, 2 ingredientes adicionales) + glup 2 litros
       </p>
-      <img alt="Combo de Pizzas Love" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 5: Dos pizzas grandes con dos ingredientes y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $16
+       $16.00
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -528,9 +535,9 @@
        Agregar
       </button>
      </div>
-    
+    </div>
    </section>
-   <!-- Pesta\u00F1as de categor\u00EDas con scroll suave -->
+   <!-- Pestañas de categorías con scroll suave -->
    <section class="mt-12 border-b border-gray-200 sticky top-0 bg-gray-50 z-20 pt-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pb-2">
     <nav class="flex overflow-x-auto whitespace-nowrap gap-8 text-base font-semibold text-gray-600 scrollbar-hide">
      <button class="category-btn pb-3 flex items-center gap-2 text-yellow-500 border-b-3 border-yellow-500" data-target="pizzas">
@@ -565,30 +572,30 @@
      </button>
     </nav>
    </section>
-   <!-- Secci\u00F3n PIZZAS -->
+   <!-- Sección PIZZAS -->
    <section class="mt-10" id="pizzas">
     <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
      PIZZAS
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
      <!-- Pizza Pepperoni -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="La cl\u00E1sica con mucho pepperoni y extra queso mozzarella." data-name="Pizza Pepperoni" data-original-price="10.99" data-price="10.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="La clásica con mucho pepperoni y extra queso mozzarella." data-name="Pizza Pepperoni" data-original-price="10.99" data-price="10.99">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Pizza Pepperoni
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       La cl\u00E1sica con mucho pepperoni y extra queso mozzarella.
+       La clásica con mucho pepperoni y extra queso mozzarella.
       </p>
       <img alt="Pizza de Pepperoni" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $10.990
+       $10.99
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -599,23 +606,23 @@
       </button>
      </div>
      <!-- Pizza Margherita -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="Tomate fresco, mozzarella de b\u00FAfala y albahaca. Simplemente perfecta." data-name="Pizza Margherita" data-original-price="9.99" data-price="9.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="Tomate fresco, mozzarella de búfala y albahaca. Simplemente perfecta." data-name="Pizza Margherita" data-original-price="9.99" data-price="9.99">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Pizza Margherita
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       Tomate fresco, mozzarella de b\u00FAfala y albahaca. Simplemente perfecta.
+       Tomate fresco, mozzarella de búfala y albahaca. Simplemente perfecta.
       </p>
       <img alt="Pizza Margherita" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $9.990
+       $9.99
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -626,23 +633,23 @@
       </button>
      </div>
      <!-- Pizza Hawaiana -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="Jam\u00F3n de calidad, pi\u00F1a jugosa y queso fundido. Un cl\u00E1sico amado." data-name="Pizza Hawaiana" data-original-price="11.50" data-price="11.50">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="Jamón de calidad, piña jugosa y queso fundido. Un clásico amado." data-name="Pizza Hawaiana" data-original-price="11.50" data-price="11.50">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Pizza Hawaiana
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       Jam\u00F3n de calidad, pi\u00F1a jugosa y queso fundido. Un cl\u00E1sico amado.
+       Jamón de calidad, piña jugosa y queso fundido. Un clásico amado.
       </p>
       <img alt="Pizza Hawaiana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $11.500
+       $11.50
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -653,7 +660,7 @@
       </button>
      </div>
      <!-- Pizza Vegetariana -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="Variedad de vegetales frescos de temporada sobre una cama de queso." data-name="Pizza Vegetariana" data-original-price="10.50" data-price="10.50">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="Variedad de vegetales frescos de temporada sobre una cama de queso." data-name="Pizza Vegetariana" data-original-price="10.50" data-price="10.50">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Pizza Vegetariana
       </h4>
@@ -662,14 +669,14 @@
       </p>
       <img alt="Pizza Vegetariana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $10.500
+       $10.50
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -680,7 +687,7 @@
       </button>
      </div>
      <!-- Pizza Cuatro Quesos -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="Una mezcla irresistible de mozzarella, provolone, gorgonzola y parmesano." data-name="Pizza Cuatro Quesos" data-original-price="12.00" data-price="12.00">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="Una mezcla irresistible de mozzarella, provolone, gorgonzola y parmesano." data-name="Pizza Cuatro Quesos" data-original-price="12.00" data-price="12.00">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Pizza Cuatro Quesos
       </h4>
@@ -689,14 +696,14 @@
       </p>
       <img alt="Pizza Cuatro Quesos" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $12.000
+       $12.00
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -707,23 +714,23 @@
       </button>
      </div>
      <!-- Pizza Barbacoa -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="Pollo a la barbacoa, cebolla morada y cilantro. \u00a1Explosi\u00F3n de sabor!" data-name="Pizza Barbacoa" data-original-price="12.50" data-price="12.50">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="Pollo a la barbacoa, cebolla morada y cilantro. ¡Explosión de sabor!" data-name="Pizza Barbacoa" data-original-price="12.50" data-price="12.50">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Pizza Barbacoa
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       Pollo a la barbacoa, cebolla morada y cilantro. \u00a1Explosi\u00F3n de sabor!
+       Pollo a la barbacoa, cebolla morada y cilantro. ¡Explosión de sabor!
       </p>
       <img alt="Pizza Barbacoa" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $12.500
+       $12.50
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -734,23 +741,23 @@
       </button>
      </div>
      <!-- Pizza Mexicana -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="Carne molida, jalape\u00F1os, cebolla y salsa picante. \u00a1Para los amantes del picante!" data-name="Pizza Mexicana" data-original-price="11.80" data-price="11.80">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="Carne molida, jalapeños, cebolla y salsa picante. ¡Para los amantes del picante!" data-name="Pizza Mexicana" data-original-price="11.80" data-price="11.80">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Pizza Mexicana
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       Carne molida, jalape\u00F1os, cebolla y salsa picante. \u00a1Para los amantes del picante!
+       Carne molida, jalapeños, cebolla y salsa picante. ¡Para los amantes del picante!
       </p>
       <img alt="Pizza Mexicana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $11.800
+       $11.80
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -760,11 +767,10 @@
        Agregar
       </button>
      </div>
-   
-     <!-- Pizza Di\u00E1vola (No disponible) -->
+     <!-- Pizza Diávola (No disponible) -->
      <div class="bg-gray-100 rounded-xl shadow-lg p-4 flex flex-col justify-center items-center text-gray-400 text-center">
       <h4 class="text-lg font-semibold mb-1">
-       Pizza Di\u00E1vola
+       Pizza Diávola
       </h4>
       <p class="text-sm mb-3">
        No Disponible
@@ -774,38 +780,38 @@
      </div>
     </div>
    </section>
-   <!-- Secci\u00F3n HAMBURGUESAS -->
+   <!-- Sección HAMBURGUESAS -->
    <section class="mt-12" id="hamburguesas">
     <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
      HAMBURGUESAS
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
      <!-- Basic Burger + Papas -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="225 gramos de prote\u00EDna" data-name="Basic Burger + Papas" data-original-price="9.99" data-price="8.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="225 gramos de proteína" data-name="Basic Burger + Papas" data-original-price="9.99" data-price="8.99">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Basic Burger + Papas
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       225 gramos de prote\u00EDna
+       225 gramos de proteína
       </p>
       <img alt="Basic Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove3.png.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $8.990
+        $8.99
        </span>
        <span class="text-sm line-through text-gray-400">
-        $9.990
+        $9.99
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         10% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -815,33 +821,32 @@
        Agregar
       </button>
      </div>
-     
      <!-- Deluxe Burger + Papas -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="225 gramos de prote\u00EDna" data-name="Deluxe Burger + Papas" data-original-price="14.59" data-price="13.59">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="225 gramos de proteína" data-name="Deluxe Burger + Papas" data-original-price="14.59" data-price="13.59">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Deluxe Burger + Papas
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       225 gramos de prote\u00EDna
+       225 gramos de proteína
       </p>
       <img alt="Deluxe Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/c874454e-e066-4282-e420-2800fe25f561.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $13.590
+        $13.59
        </span>
        <span class="text-sm line-through text-gray-400">
-        $14.590
+        $14.59
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         7% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -852,31 +857,31 @@
       </button>
      </div>
      <!-- Doble Roof Burger + Papas -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="350 gramos de prote\u00EDna" data-name="Doble Roof Burger + Papas" data-original-price="14.59" data-price="13.59">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="350 gramos de proteína" data-name="Doble Roof Burger + Papas" data-original-price="14.59" data-price="13.59">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Doble Roof Burger + Papas
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       350 gramos de prote\u00EDna
+       350 gramos de proteína
       </p>
       <img alt="Doble Roof Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/e70df619-31e6-4fbd-c452-1a18ad3ab2dc.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $13.590
+        $13.59
        </span>
        <span class="text-sm line-through text-gray-400">
-        $14.590
+        $14.59
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         7% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -887,31 +892,31 @@
       </button>
      </div>
      <!-- Triple Roof Burger + Papas -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="525 gramos de prote\u00EDna" data-name="Triple Roof Burger + Papas" data-original-price="17.59" data-price="16.59">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="525 gramos de proteína" data-name="Triple Roof Burger + Papas" data-original-price="17.59" data-price="16.59">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Triple Roof Burger + Papas
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       525 gramos de prote\u00EDna
+       525 gramos de proteína
       </p>
       <img alt="Triple Roof Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/ff6443bd-b3a5-4fbd-16a4-9d5b2a1831ca.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $16.590
+        $16.59
        </span>
        <span class="text-sm line-through text-gray-400">
-        $17.590
+        $17.59
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         6% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -921,33 +926,32 @@
        Agregar
       </button>
      </div>
-   
      <!-- 2 Cheddar Burger + Papas -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="450 gramos de prote\u00EDna" data-name="2 Cheddar Burger + Papas" data-original-price="17.99" data-price="15.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="450 gramos de proteína" data-name="2 Cheddar Burger + Papas" data-original-price="17.99" data-price="15.99">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        2 Cheddar Burger + Papas
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       450 gramos de prote\u00EDna
+       450 gramos de proteína
       </p>
       <img alt="Dos Cheddar Burgers con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/a626f0b0-bef6-495e-2887-2b01e0c0f00d.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $15.990
+        $15.99
        </span>
        <span class="text-sm line-through text-gray-400">
-        $17.990
+        $17.99
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         11% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -959,14 +963,14 @@
      </div>
     </div>
    </section>
-   <!-- Secci\u00F3n SNACKS -->
+   <!-- Sección SNACKS -->
    <section class="mt-12" id="snacks">
     <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
      SNACKS
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
      <!-- Camarones Apanados -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="5 camarones con salsa, con sabor a la costa de mar" data-name="Camarones Apanados" data-original-price="7.99" data-price="6.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="5 camarones con salsa, con sabor a la costa de mar" data-name="Camarones Apanados" data-original-price="7.99" data-price="6.99">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Camarones Apanados
       </h4>
@@ -976,21 +980,21 @@
       <img alt="Camarones apanados con salsa para mojar en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/9661095f-4efd-4b69-9582-aaa792c7bd6c.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $6.990
+        $6.99
        </span>
        <span class="text-sm line-through text-gray-400">
-        $7.990
+        $7.99
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         13% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1001,31 +1005,31 @@
       </button>
      </div>
      <!-- Aros de Cebolla -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="10 aros de cebolla con salsa BBQ / t\u00E1rtara" data-name="Aros de Cebolla" data-original-price="6.89" data-price="5.89">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="10 aros de cebolla con salsa BBQ / tártara" data-name="Aros de Cebolla" data-original-price="6.89" data-price="5.89">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Aros de Cebolla
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       10 aros de cebolla con salsa BBQ / t\u00E1rtara
+       10 aros de cebolla con salsa BBQ / tártara
       </p>
-      <img alt="Aros de cebolla con salsa BBQ y t\u00E1rtara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/afb367a8-567e-4880-972f-d371b993a342.jpg" width="200"/>
+      <img alt="Aros de cebolla con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/afb367a8-567e-4880-972f-d371b993a342.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $5.890
+        $5.89
        </span>
        <span class="text-sm line-through text-gray-400">
-        $6.890
+        $6.89
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         14% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1036,31 +1040,31 @@
       </button>
      </div>
      <!-- Mozzarella Sticks -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="6 palitos con salsa BBQ / t\u00E1rtara" data-name="Mozzarella Sticks" data-original-price="6.99" data-price="5.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="6 palitos con salsa BBQ / tártara" data-name="Mozzarella Sticks" data-original-price="6.99" data-price="5.99">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Mozzarella Sticks
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       6 palitos con salsa BBQ / t\u00E1rtara
+       6 palitos con salsa BBQ / tártara
       </p>
-      <img alt="Palitos de mozzarella con salsa BBQ y t\u00E1rtara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/15bb5c2f-56fc-46ca-4f5b-79608eab9a5d.jpg" width="200"/>
+      <img alt="Palitos de mozzarella con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/15bb5c2f-56fc-46ca-4f5b-79608eab9a5d.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $5.990
+        $5.99
        </span>
        <span class="text-sm line-through text-gray-400">
-        $6.990
+        $6.99
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         14% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1071,31 +1075,31 @@
       </button>
      </div>
      <!-- Nuggets de pollo -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="6 nuggets con salsa BBQ / t\u00E1rtara" data-name="Nuggets de pollo" data-original-price="6.89" data-price="5.89">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="6 nuggets con salsa BBQ / tártara" data-name="Nuggets de pollo" data-original-price="6.89" data-price="5.89">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Nuggets de pollo
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       6 nuggets con salsa BBQ / t\u00E1rtara
+       6 nuggets con salsa BBQ / tártara
       </p>
-      <img alt="Nuggets de pollo con salsa BBQ y t\u00E1rtara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/55b57428-fed5-4044-f68a-1d477ca11ebf.jpg" width="200"/>
+      <img alt="Nuggets de pollo con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/55b57428-fed5-4044-f68a-1d477ca11ebf.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $5.890
+        $5.89
        </span>
        <span class="text-sm line-through text-gray-400">
-        $6.890
+        $6.89
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         14% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1105,32 +1109,32 @@
        Agregar
       </button>
      </div>
-     <!-- Papas R\u00FAsticas -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="225 gramos de papas r\u00FAsticas" data-name="Papas R\u00FAsticas" data-original-price="7.49" data-price="6.49">
+     <!-- Papas Rústicas -->
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="225 gramos de papas rústicas" data-name="Papas Rústicas" data-original-price="7.49" data-price="6.49">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
-       Papas R\u00FAsticas
+       Papas Rústicas
       </h4>
       <p class="text-sm text-gray-600 mb-3">
-       225 gramos de papas r\u00FAsticas
+       225 gramos de papas rústicas
       </p>
-      <img alt="Papas r\u00FAsticas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/675b4f42-31a9-4657-d077-182ee563916e.jpg" width="200"/>
+      <img alt="Papas rústicas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/675b4f42-31a9-4657-d077-182ee563916e.jpg" width="200"/>
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
-        $6.490
+        $6.49
        </span>
        <span class="text-sm line-through text-gray-400">
-        $7.490
+        $7.49
        </span>
        <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
         13% OFF
        </span>
       </div>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1140,7 +1144,6 @@
        Agregar
       </button>
      </div>
-     
      <!-- Chorrillana Mechada (No disponible) -->
      <div class="bg-gray-100 rounded-xl shadow-lg p-4 flex flex-col justify-center items-center text-gray-400 text-center">
       <h4 class="text-lg font-semibold mb-1">
@@ -1154,14 +1157,14 @@
      </div>
     </div>
    </section>
-   <!-- Secci\u00F3n POSTRES -->
+   <!-- Sección POSTRES -->
    <section class="mt-12" id="postres">
     <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
      POSTRES
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
      <!-- Panqueques rellenos con manjar -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card cursor-pointer" data-description="4 unidades de panqueques rellenos con manjar, cubiertos con az\u00FAcar flor" data-name="Panqueques rellenos con manjar" data-original-price="4.99" data-price="3.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card" data-description="4 unidades de panqueques rellenos con manjar, cubiertos con azúcar flor" data-name="Panqueques rellenos con manjar" data-original-price="4.99" data-price="3.99">
       <img alt="Panqueques rellenos con manjar en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/5aaabb00-bd46-4c10-aa20-af01e5674d8f.jpg" width="120"/>
       <div class="flex flex-col justify-between flex-grow">
        <div>
@@ -1169,26 +1172,26 @@
          Panqueques rellenos con manjar
         </h4>
         <p class="text-sm text-gray-600 mb-2">
-         4 unidades de panqueques rellenos con manjar, cubiertos con az\u00FAcar flor
+         4 unidades de panqueques rellenos con manjar, cubiertos con azúcar flor
         </p>
        </div>
        <div class="flex items-center gap-2">
         <span class="text-xl font-bold text-gray-900 price-display">
-         $3.990
+         $3.99
         </span>
         <span class="text-sm line-through text-gray-400">
-         $4.990
+         $4.99
         </span>
         <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
          20% OFF
         </span>
        </div>
        <div class="quantity-controls">
-        <button class="quantity-button decrease-quantity">
+        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
          -
         </button>
-        <input class="quantity-input-field" min="1" type="number" value="1"/>
-        <button class="quantity-button increase-quantity">
+        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
          +
         </button>
        </div>
@@ -1200,7 +1203,7 @@
       </div>
      </div>
      <!-- Churros con Manjar y chocolate -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card cursor-pointer" data-description="6 unidades de churros con manjar y chocolate, cubiertos con az\u00FAcar flor" data-name="Churros con Manjar y chocolate" data-original-price="4.99" data-price="3.99">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card" data-description="6 unidades de churros con manjar y chocolate, cubiertos con azúcar flor" data-name="Churros con Manjar y chocolate" data-original-price="4.99" data-price="3.99">
       <img alt="Churros con manjar y chocolate en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/ff299b77-0124-40d9-2055-47ad996af4e7.jpg" width="120"/>
       <div class="flex flex-col justify-between flex-grow">
        <div>
@@ -1208,26 +1211,26 @@
          Churros con Manjar y chocolate
         </h4>
         <p class="text-sm text-gray-600 mb-2">
-         6 unidades de churros con manjar y chocolate, cubiertos con az\u00FAcar flor
+         6 unidades de churros con manjar y chocolate, cubiertos con azúcar flor
         </p>
        </div>
        <div class="flex items-center gap-2">
         <span class="text-xl font-bold text-gray-900 price-display">
-         $3.990
+         $3.99
         </span>
         <span class="text-sm line-through text-gray-400">
-         $4.990
+         $4.99
         </span>
         <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
          20% OFF
         </span>
        </div>
        <div class="quantity-controls">
-        <button class="quantity-button decrease-quantity">
+        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
          -
         </button>
-        <input class="quantity-input-field" min="1" type="number" value="1"/>
-        <button class="quantity-button increase-quantity">
+        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
          +
         </button>
        </div>
@@ -1238,35 +1241,35 @@
        </button>
       </div>
      </div>
-     <!-- Churros con az\u00FAcar flor -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card cursor-pointer" data-description="6 unidades de churros con az\u00FAcar flor, cubiertos con az\u00FAcar flor" data-name="Churros con az\u00FAcar flor" data-original-price="4.99" data-price="3.99">
-      <img alt="Churros con az\u00FAcar glas en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/0723d0db-71ab-4062-9970-290437f138f8.jpg" width="120"/>
+     <!-- Churros con azúcar flor -->
+     <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card" data-description="6 unidades de churros con azúcar flor, cubiertos con azúcar flor" data-name="Churros con azúcar flor" data-original-price="4.99" data-price="3.99">
+      <img alt="Churros con azúcar glas en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/0723d0db-71ab-4062-9970-290437f138f8.jpg" width="120"/>
       <div class="flex flex-col justify-between flex-grow">
        <div>
         <h4 class="text-lg font-semibold text-gray-900 mb-1">
-         Churros con az\u00FAcar flor
+         Churros con azúcar flor
         </h4>
         <p class="text-sm text-gray-600 mb-2">
-         6 unidades de churros con az\u00FAcar flor, cubiertos con az\u00FAcar flor
+         6 unidades de churros con azúcar flor, cubiertos con azúcar flor
         </p>
        </div>
        <div class="flex items-center gap-2">
         <span class="text-xl font-bold text-gray-900 price-display">
-         $3.990
+         $3.99
         </span>
         <span class="text-sm line-through text-gray-400">
-         $4.990
+         $4.99
         </span>
         <span class="text-xs bg-red-500 text-white rounded-full px-2.5 py-1 font-medium">
          20% OFF
         </span>
        </div>
        <div class="quantity-controls">
-        <button class="quantity-button decrease-quantity">
+        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
          -
         </button>
-        <input class="quantity-input-field" min="1" type="number" value="1"/>
-        <button class="quantity-button increase-quantity">
+        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
          +
         </button>
        </div>
@@ -1279,14 +1282,14 @@
      </div>
     </div>
    </section>
-   <!-- Secci\u00F3n BEBIDAS -->
+   <!-- Sección BEBIDAS -->
    <section class="mt-12" id="bebidas">
     <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
      BEBIDAS
     </h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
      <!-- Agua Mineral Sin Gas -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="500 ml" data-name="Agua Mineral Sin Gas" data-original-price="2.20" data-price="2.20">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="500 ml" data-name="Agua Mineral Sin Gas" data-original-price="2.20" data-price="2.20">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Agua Mineral Sin Gas
       </h4>
@@ -1295,14 +1298,14 @@
       </p>
       <img alt="Botella de Agua Mineral Sin Gas" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/94815b87-a0be-43d9-fe34-c61f4be0f3b2.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $2.200
+       $2.20
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1313,7 +1316,7 @@
       </button>
      </div>
      <!-- CocaCola Light -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="355 ml" data-name="CocaCola Light" data-original-price="2.20" data-price="2.20">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="355 ml" data-name="CocaCola Light" data-original-price="2.20" data-price="2.20">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        CocaCola Light
       </h4>
@@ -1322,14 +1325,14 @@
       </p>
       <img alt="Lata de CocaCola Light" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/6f510bff-cc4d-4799-3058-f7c6188392ed.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $2.200
+       $2.20
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1340,7 +1343,7 @@
       </button>
      </div>
      <!-- Fanta Normal -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="355 ml" data-name="Fanta Normal" data-original-price="2.20" data-price="2.20">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="355 ml" data-name="Fanta Normal" data-original-price="2.20" data-price="2.20">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Fanta Normal
       </h4>
@@ -1349,14 +1352,14 @@
       </p>
       <img alt="Lata de Fanta Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/162ab2eb-0996-4dfe-2d14-820e93848693.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $2.200
+       $2.20
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1367,7 +1370,7 @@
       </button>
      </div>
      <!-- Fanta Zero -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="355 ml" data-name="Fanta Zero" data-original-price="2.20" data-price="2.20">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="355 ml" data-name="Fanta Zero" data-original-price="2.20" data-price="2.20">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Fanta Zero
       </h4>
@@ -1376,14 +1379,14 @@
       </p>
       <img alt="Lata de Fanta Zero" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/4c1c6820-bbb3-46b0-d0ff-8ae0c528d0fd.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $2.200
+       $2.20
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1394,7 +1397,7 @@
       </button>
      </div>
      <!-- Sprite Normal -->
-     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card cursor-pointer" data-description="355 ml" data-name="Sprite Normal" data-original-price="2.20" data-price="2.20">
+     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="355 ml" data-name="Sprite Normal" data-original-price="2.20" data-price="2.20">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
        Sprite Normal
       </h4>
@@ -1403,14 +1406,14 @@
       </p>
       <img alt="Lata de Sprite Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/2cf1cde9-d253-4db6-e604-7edbbb811ff2.jpg" width="200"/>
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
-       $2.200
+       $2.20
       </span>
       <div class="quantity-controls">
-       <button class="quantity-button decrease-quantity">
+       <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1"/>
-       <button class="quantity-button increase-quantity">
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
@@ -1420,7 +1423,6 @@
        Agregar
       </button>
      </div>
-    
      <!-- CocaCola Zero (No disponible) -->
      <div class="bg-gray-100 rounded-xl shadow-lg p-4 flex flex-col justify-center items-center text-gray-400 text-center">
       <h4 class="text-lg font-semibold mb-1">
@@ -1445,18 +1447,17 @@
       <i class="fas fa-ban text-5xl text-gray-400 opacity-75">
       </i>
      </div>
-     
-   
-    
+    </div>
+   </section>
    <!-- Botones flotantes (WhatsApp y Carrito) -->
    <div class="floating-buttons fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-    <!-- Bot\u00F3n de WhatsApp flotante -->
-    <a class="bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300 ease-in-out" href="https://wa.me/5804120403343" target="_blank">
+    <!-- Botón de WhatsApp flotante -->
+    <a class="bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300 ease-in-out" href="https://wa.me/5804120403343" target="_blank" aria-label="Contactar por WhatsApp">
      <i class="fab fa-whatsapp text-2xl">
      </i>
     </a>
-    <!-- Bot\u00F3n del carrito flotante (existente, ahora con un dise\u00F1o m\u00E1s consistente) -->
-    <button class="bg-red-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300 ease-in-out" id="main-cart-button">
+    <!-- Botón del carrito flotante -->
+    <button class="bg-red-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300 ease-in-out" id="main-cart-button" aria-label="Ver carrito de compras">
      <i class="fas fa-shopping-cart text-2xl">
      </i>
      <span class="ml-2 text-sm font-semibold" id="main-cart-count">
@@ -1468,24 +1469,24 @@
   <!-- Modal del Carrito -->
   <div class="modal" id="cart-modal">
    <div class="modal-content">
-    <span class="close-button" id="close-cart-modal">
+    <span class="close-button" id="close-cart-modal" aria-label="Cerrar modal">
      &times;
     </span>
     <h2 class="text-2xl font-bold text-gray-900 mb-6">
      Tu Carrito de Compras
     </h2>
     <div class="max-h-60 overflow-y-auto pr-2 mb-4" id="cart-items-container">
-     <!-- Items del carrito se renderizar\u00E1n aqu\u00ED -->
+     <!-- Items del carrito se renderizarán aquí -->
     </div>
     <div class="text-right text-xl font-bold text-gray-900 mb-6">
-     Total: $<span id="cart-total">
-      0.00
+     Total: <span id="cart-total">
+      $0.00
      </span>
     </div>
     <h3 class="text-xl font-semibold text-gray-800 mb-4">
      Datos del Pedido
     </h3>
-    <form class="space-y-4" id="order-form">
+    <form class="space-y-4" id="order-form" novalidate>
      <div>
       <label class="block text-sm font-medium text-gray-700" for="customer-name">
        Nombre:
@@ -1500,9 +1501,9 @@
      </div>
      <div>
       <label class="block text-sm font-medium text-gray-700" for="customer-address">
-       Direcci\u00F3n:
+       Dirección:
       </label>
-      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-address" rows="3">
+      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-address" required="" rows="3">
       </textarea>
      </div>
      <div>
@@ -1523,13 +1524,13 @@
   <!-- Footer -->
   <footer class="mt-16 border-t border-gray-200 pt-8 pb-12 text-sm text-gray-600 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
    <div class="flex flex-col md:flex-row md:justify-between gap-10 items-center md:items-start">
-    <!-- Columna de contacto y WhatsApp (Simplificada) -->
+    <!-- Columna de contacto y WhatsApp -->
     <div class="flex flex-col gap-4 max-w-xs text-center md:text-left mx-auto md:mx-0">
      <div class="flex items-center gap-2 justify-center md:justify-start text-base">
       <i class="fas fa-question-circle text-red-500 text-lg">
       </i>
       <span class="font-medium text-gray-700">
-       \u00bfNecesitas ayuda?
+       ¿Necesitas ayuda?
       </span>
      </div>
      <div class="flex items-center gap-2 justify-center md:justify-start text-base">
@@ -1556,7 +1557,7 @@
     </div>
     <!-- Columna central con logo y redes sociales -->
     <div class="flex flex-col items-center gap-6 md:mt-8 mx-auto">
-     <img alt="Logotipo de Pizzas Love en el pie de p\u00E1gina" class="w-36 h-auto" height="40" src="./logo.png" width="120"/>
+     <img alt="Logotipo de Pizzas Love en el pie de página" class="w-36 h-auto" height="40" src="./logo.png" width="120"/>
      <div class="flex gap-8 text-gray-700">
       <a aria-label="Facebook" class="hover:text-red-600 transition transform hover:scale-125" href="#">
        <i class="fab fa-facebook-f text-3xl">
@@ -1571,26 +1572,30 @@
     <!-- Columna de "Powered by" -->
     <div class="flex flex-col gap-4 text-center md:text-right max-w-xs mx-auto md:mx-0">
      <p class="text-gray-700 font-semibold text-base">
-      Dise\u00F1ado por
+      Diseñado por
      </p>
      <img alt="Logotipo de Estudio Guacamaya" class="mx-auto md:mx-0 w-40 h-auto" height="40" src="https://placehold.co/160x40/FF0000/FFFFFF?text=Estudio+Guacamaya" width="160"/>
     </div>
    </div>
    <!-- Mapa de Google Maps -->
    <div class="mt-12 w-full flex justify-center">
-    <iframe allowfullscreen="" class="rounded-xl shadow-lg w-full max-w-2xl" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.642954868019!2d-67.35928802598379!3d9.907937390161474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e5f284c1b92a403%3A0x6b4a2e5d5c0b4d4a!2sPizzas%20Love!5e0!3m2!1sen!2sus!4v1718817290000!5m2!1sen!2sus" style="border:0;" width="800">
+    <iframe allowfullscreen="" class="rounded-xl shadow-lg w-full max-w-2xl" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.642954868019!2d-67.35928802598379!3d9.907937390161474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e5f284c1b92a403%3A0x6b4a2e5d5c0b4d4a!2sPizzas%20Love!5e0!3m2!1sen!2sus!4v1718817290000!5m2!1sen!2sus" style="border:0;" title="Ubicación de Pizzas Love en Google Maps" width="800">
     </iframe>
    </div>
    <p class="mt-12 text-center text-gray-500 text-sm">
-    v3.0.23
+    v3.1.0
    </p>
   </footer>
+  <!-- Contenedor para las notificaciones Toast -->
+  <div id="toast-container"></div>
   <script>
-   // --- Variables Globales ---
-    const WHATSAPP_PHONE_NUMBER = '5804120403343'; // N\u00FAmero de tel\u00E9fono de WhatsApp (sin + ni espacios)
-    let cart = []; // Array para almacenar los productos en el carrito
+    document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Elementos del DOM ---
+    // --- VARIABLES GLOBALES Y CONFIGURACIÓN ---
+    const WHATSAPP_PHONE_NUMBER = '5804120403343';
+    let cart = [];
+
+    // --- ELEMENTOS DEL DOM ---
     const stickyNavbar = document.getElementById("sticky-navbar");
     const floatingButtons = document.querySelector(".floating-buttons");
     const mainCartButton = document.getElementById("main-cart-button");
@@ -1601,95 +1606,148 @@
     const closeCartModalButton = document.getElementById("close-cart-modal");
     const cartItemsContainer = document.getElementById("cart-items-container");
     const cartTotalDisplay = document.getElementById("cart-total");
-    const sendWhatsappOrderButton = document.getElementById("send-whatsapp-order");
     const orderForm = document.getElementById("order-form");
+    const mainContent = document.querySelector('main');
+    const categoryNav = document.querySelector('.category-btn').parentElement;
 
-    // --- Funciones del Slider (existente, sin cambios) ---
+    // --- FUNCIONES DE UTILIDAD ---
+
+    /**
+     * Muestra una notificación toast.
+     * @param {string} message - El mensaje a mostrar.
+     * @param {string} type - 'success' o 'error'.
+     */
+    function showToast(message, type = 'success') {
+        const toastContainer = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.classList.add('toast', type);
+
+        const iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+        toast.innerHTML = `
+            <i class="fas ${iconClass} toast-icon"></i>
+            <span>${message}</span>
+        `;
+        toastContainer.appendChild(toast);
+        
+        // Trigger the animation
+        setTimeout(() => toast.classList.add('show'), 10);
+
+        // Hide and remove the toast after 3 seconds
+        setTimeout(() => {
+            toast.classList.remove('show');
+            toast.addEventListener('transitionend', () => toast.remove());
+        }, 3000);
+    }
+    
+    /**
+     * Formatea un número como una moneda en formato USD.
+     * @param {number} amount - La cantidad a formatear.
+     * @returns {string} - La cantidad formateada (ej. "$12.50").
+     */
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(amount);
+    }
+
+    /**
+     * Actualiza el estado del local (Abierto/Cerrado).
+     */
+    function updateStoreStatus() {
+        const now = new Date();
+        const hours = now.getHours();
+        const statusElement = document.getElementById('store-status');
+        statusElement.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-red-500');
+
+        if (hours >= 9 && hours < 23) {
+            statusElement.textContent = 'Abierto ahora';
+            statusElement.classList.add('bg-green-500');
+        } else {
+            statusElement.textContent = 'Cerrado';
+            statusElement.classList.add('bg-red-500');
+        }
+    }
+
+    // --- LÓGICA DEL SLIDER ---
     const sliderWrapper = document.getElementById('slider-wrapper');
     const sliderDotsContainer = document.getElementById('slider-dots');
     const sliderItems = document.querySelectorAll('.slider-item');
     let currentIndex = 0;
+    let autoSlideInterval;
 
     function createDots() {
         sliderDotsContainer.innerHTML = '';
         sliderItems.forEach((_, index) => {
             const dot = document.createElement('span');
             dot.classList.add('dot');
-            if (index === 0) {
-                dot.classList.add('active');
-            }
-            dot.addEventListener('click', () => {
-                moveToSlide(index);
-            });
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => moveToSlide(index));
             sliderDotsContainer.appendChild(dot);
         });
     }
 
     function updateDots() {
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
+        document.querySelectorAll('.dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
     }
 
     function moveToSlide(index) {
         currentIndex = index;
-        const offset = -currentIndex * 100;
-        sliderWrapper.style.transform = `translateX(${offset}%)`;
+        sliderWrapper.style.transform = `translateX(${-currentIndex * 100}%)`;
         updateDots();
     }
 
-    let autoSlideInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % sliderItems.length;
-        moveToSlide(currentIndex);
-    }, 5000);
-
-    sliderWrapper.addEventListener('mouseover', () => {
-        clearInterval(autoSlideInterval);
-    });
-    sliderWrapper.addEventListener('mouseout', () => {
+    function startSlider() {
         autoSlideInterval = setInterval(() => {
             currentIndex = (currentIndex + 1) % sliderItems.length;
             moveToSlide(currentIndex);
         }, 5000);
-    });
+    }
 
-    // --- Funciones del Carrito ---
+    function stopSlider() {
+        clearInterval(autoSlideInterval);
+    }
 
-    // Actualiza los contadores del carrito en la interfaz
-    function updateCartCount() {
+    // --- LÓGICA DEL CARRITO ---
+
+    /**
+     * Actualiza los contadores de ítems del carrito en la UI.
+     */
+    function updateCartUI() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         mainCartCount.textContent = totalItems;
         navCartCount.textContent = totalItems;
+        renderCartItems();
     }
 
-    // Renderiza los \u00EDtems del carrito en el modal
+    /**
+     * Renderiza los ítems del carrito en el modal.
+     */
     function renderCartItems() {
         cartItemsContainer.innerHTML = '';
         let total = 0;
 
         if (cart.length === 0) {
-            cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center">Tu carrito est\u00E1 vac\u00EDo.</p>';
+            cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center">Tu carrito está vacío.</p>';
         } else {
             cart.forEach((item, index) => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('flex', 'items-center', 'justify-between', 'py-2', 'border-b', 'border-gray-200');
                 itemElement.innerHTML = `
-                    <div class="flex-1">
+                    <div class="flex-1 pr-2">
                         <p class="font-semibold text-gray-900">${item.name}</p>
-                        <p class="text-sm text-gray-600">${item.description}</p>
                         ${item.notes ? `<p class="text-xs text-gray-500 italic">Notas: ${item.notes}</p>` : ''}
-                        <p class="text-sm text-gray-700">Precio unitario: $${item.price.toFixed(2)}</p>
+                        <p class="text-sm text-gray-700">Precio: ${formatCurrency(item.price)}</p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button class="quantity-button decrease-cart-quantity" data-index="${index}">-</button>
-                        <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="w-16 p-1 border border-gray-300 rounded-md text-center text-sm cart-quantity-input">
-                        <button class="quantity-button increase-cart-quantity" data-index="${index}">+</button>
-                        <span class="font-bold text-gray-900 ml-2">$${itemTotal.toFixed(2)}</span>
-                        <button class="text-red-500 hover:text-red-700 remove-from-cart-btn ml-2" data-index="${index}">
+                        <button class="quantity-button decrease-cart-quantity text-sm w-8 h-8" data-index="${index}" aria-label="Disminuir cantidad de ${item.name}">-</button>
+                        <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="w-12 p-1 border border-gray-300 rounded-md text-center text-sm cart-quantity-input" aria-label="Cantidad de ${item.name}">
+                        <button class="quantity-button increase-cart-quantity text-sm w-8 h-8" data-index="${index}" aria-label="Aumentar cantidad de ${item.name}">+</button>
+                        <button class="text-red-500 hover:text-red-700 remove-from-cart-btn ml-2" data-index="${index}" aria-label="Eliminar ${item.name} del carrito">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </div>
@@ -1697,297 +1755,259 @@
                 cartItemsContainer.appendChild(itemElement);
             });
         }
-        cartTotalDisplay.textContent = total.toFixed(2);
+        cartTotalDisplay.textContent = formatCurrency(total);
     }
 
-    // A\u00F1ade un producto al carrito
-    function addToCart(event) {
-        const productCard = event.target.closest('.product-card');
+    /**
+     * Añade un producto al carrito.
+     * @param {HTMLElement} productCard - El elemento de la tarjeta del producto.
+     */
+    function addToCart(productCard) {
         const name = productCard.dataset.name;
         const price = parseFloat(productCard.dataset.price);
-        const description = productCard.dataset.description;
-        const quantity = parseInt(productCard.querySelector('.quantity-input-field').value);
-        const notes = productCard.querySelector('.notes-input').value.trim();
+        const quantityInput = productCard.querySelector('.quantity-input-field');
+        const notesInput = productCard.querySelector('.notes-input');
+        
+        const quantity = parseInt(quantityInput.value);
+        const notes = notesInput.value.trim();
 
-        // Validar que la cantidad sea al menos 1
-        if (quantity < 1) {
-            alert('La cantidad debe ser al menos 1.'); // Using alert as per previous pattern, consider a custom modal.
-            return;
-        }
+        const existingItem = cart.find(item => item.name === name && item.notes === notes);
 
-        const existingItemIndex = cart.findIndex(item => item.name === name);
-
-        if (existingItemIndex > -1) {
-            // Si el producto ya est\u00E1 en el carrito, actualiza la cantidad y las notas
-            cart[existingItemIndex].quantity += quantity;
-            if (notes) {
-                cart[existingItemIndex].notes = cart[existingItemIndex].notes ? `${cart[existingItemIndex].notes}; ${notes}` : notes;
-            }
+        if (existingItem) {
+            existingItem.quantity += quantity;
         } else {
-            // Si el producto no est\u00E1 en el carrito, a\u00F1\u00E1delo
-            cart.push({ name, price, description, quantity, notes });
+            cart.push({ name, price, quantity, notes });
         }
-
-        updateCartCount();
-        alert(`${quantity} x ${name} a\u00F1adido(s) al carrito.`); // Mensaje de confirmaci\u00F3n
-        // Reset quantity input to 1 after adding to cart
-        productCard.querySelector('.quantity-input-field').value = 1;
-        // Reset price display to original price
-        const originalPrice = parseFloat(productCard.dataset.originalPrice);
-        productCard.querySelector('.price-display').textContent = `$${originalPrice.toFixed(2).replace(/\.00$/, '')}`;
+        
+        showToast(`${quantity}x ${name} añadido(s) al carrito.`);
+        
+        // Resetear la tarjeta del producto
+        quantityInput.value = 1;
+        notesInput.value = '';
+        updateProductPrice(productCard);
+        
+        updateCartUI();
     }
-
-    // Remueve un producto del carrito
-    function removeFromCart(index) {
-        cart.splice(index, 1);
-        renderCartItems();
-        updateCartCount();
-    }
-
-    // Actualiza la cantidad de un \u00EDtem en el carrito desde el modal
+    
+    /**
+     * Actualiza la cantidad de un ítem en el carrito.
+     * @param {number} index - El índice del ítem en el array del carrito.
+     * @param {number} newQuantity - La nueva cantidad.
+     */
     function updateCartItemQuantity(index, newQuantity) {
         if (newQuantity < 1) {
-            alert('La cantidad debe ser al menos 1. Si deseas eliminar el producto, usa el \u00EDcono de la papelera.');
-            renderCartItems(); // Re-render to revert invalid input
+            cart.splice(index, 1);
+        } else {
+            cart[index].quantity = newQuantity;
+        }
+        updateCartUI();
+    }
+
+    /**
+     * Abre o cierra el modal del carrito.
+     * @param {boolean} show - true para mostrar, false para ocultar.
+     */
+    function toggleCartModal(show) {
+        if (show) {
+            renderCartItems();
+            cartModal.style.display = 'flex';
+        } else {
+            cartModal.style.display = 'none';
+        }
+    }
+    
+    /**
+     * Valida el formulario de pedido y genera el mensaje de WhatsApp.
+     */
+    function handleSendOrder(event) {
+        event.preventDefault();
+        const requiredFields = ['customer-name', 'customer-lastname', 'customer-address'];
+        let isValid = true;
+        
+        // Resetear estilos de error
+        requiredFields.forEach(id => document.getElementById(id).classList.remove('form-input-error'));
+        
+        // Validar campos
+        requiredFields.forEach(id => {
+            const field = document.getElementById(id);
+            if (!field.value.trim()) {
+                field.classList.add('form-input-error');
+                isValid = false;
+            }
+        });
+        
+        if (cart.length === 0) {
+            showToast('Tu carrito está vacío.', 'error');
             return;
         }
-        cart[index].quantity = newQuantity;
-        renderCartItems();
-        updateCartCount();
-    }
-
-    // Abre el modal del carrito
-    function openCartModal() {
-        renderCartItems(); // Renderiza los \u00EDtems cada vez que se abre el modal
-        cartModal.style.display = 'flex';
-    }
-
-    // Cierra el modal del carrito
-    function closeCartModal() {
-        cartModal.style.display = 'none';
-    }
-
-    // Genera el mensaje de WhatsApp y abre el enlace
-    function sendOrderViaWhatsApp(event) {
-        event.preventDefault(); // Evita que el formulario se env\u00EDe normalmente
+        
+        if (!isValid) {
+            showToast('Por favor, completa los campos requeridos.', 'error');
+            return;
+        }
 
         const customerName = document.getElementById('customer-name').value.trim();
         const customerLastName = document.getElementById('customer-lastname').value.trim();
         const customerAddress = document.getElementById('customer-address').value.trim();
         const extraNotes = document.getElementById('extra-notes').value.trim();
-
-        if (cart.length === 0) {
-            alert('Tu carrito est\u00E1 vac\u00EDo. Agrega productos antes de realizar el pedido.');
-            return;
-        }
-
-        if (!customerName || !customerLastName || !customerAddress) {
-            alert('Por favor, completa tu Nombre, Apellido y Direcci\u00F3n.');
-            return;
-        }
-
-        let orderMessage = `\u00a1Hola! Me gustar\u00EDa hacer un pedido:\n\n`;
+        
+        let orderMessage = `¡Hola! Me gustaría hacer un pedido:\n\n`;
+        let total = 0;
         cart.forEach((item, index) => {
-            orderMessage += `${index + 1}. ${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            orderMessage += `${index + 1}. ${item.name} x${item.quantity}\n`;
             if (item.notes) {
                 orderMessage += `   (Notas: ${item.notes})\n`;
             }
         });
 
-        const totalOrder = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        orderMessage += `\nTotal: $${totalOrder.toFixed(2)}\n\n`;
+        orderMessage += `\nTotal: ${formatCurrency(total)}\n\n`;
         orderMessage += `--- Datos del Cliente ---\n`;
         orderMessage += `Nombre: ${customerName} ${customerLastName}\n`;
-        orderMessage += `Direcci\u00F3n: ${customerAddress}\n`;
-        if (extraNotes) {
-            orderMessage += `Notas Generales: ${extraNotes}\n`;
-        }
-        orderMessage += `\n\u00a1Gracias!`;
+        orderMessage += `Dirección: ${customerAddress}\n`;
+        if (extraNotes) orderMessage += `Notas Generales: ${extraNotes}\n`;
+        orderMessage += `\n¡Gracias!`;
 
-        // Codificar el mensaje para la URL de WhatsApp
         const encodedMessage = encodeURIComponent(orderMessage);
         const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedMessage}`;
 
-        window.open(whatsappUrl, '_blank'); // Abre el enlace de WhatsApp en una nueva pesta\u00F1a
-        cart = []; // Vaciar el carrito despu\u00E9s de enviar el pedido
-        updateCartCount();
-        closeCartModal(); // Cerrar el modal
-        alert('Tu pedido ha sido enviado a WhatsApp. \u00a1Gracias!');
+        window.open(whatsappUrl, '_blank');
+        
+        // Limpiar después de enviar
+        cart = [];
+        orderForm.reset();
+        updateCartUI();
+        toggleCartModal(false);
+        showToast('¡Pedido enviado a WhatsApp! Gracias.');
     }
 
-    // Maneja los cambios de cantidad en los inputs de producto
-    function handleProductQuantityChange(event) {
-        const input = event.target;
-        let quantity = parseInt(input.value);
-        if (isNaN(quantity) || quantity < 1) {
-            quantity = 1; // Default to 1 if invalid
-            input.value = 1;
-        }
-        const productCard = input.closest('.product-card');
-        const originalPrice = parseFloat(productCard.dataset.originalPrice);
+    /**
+     * Actualiza el precio mostrado en una tarjeta de producto según la cantidad.
+     */
+    function updateProductPrice(productCard) {
+        const quantity = parseInt(productCard.querySelector('.quantity-input-field').value);
+        const originalPrice = parseFloat(productCard.dataset.originalPrice || productCard.dataset.price);
         const priceDisplay = productCard.querySelector('.price-display');
-        priceDisplay.textContent = `$${(originalPrice * quantity).toFixed(2).replace(/\.00$/, '')}`;
+        const priceWithDiscount = parseFloat(productCard.dataset.price);
+
+        // Si hay descuento, el precio base es el de oferta. Si no, es el original.
+        const basePrice = productCard.querySelector('.line-through') ? priceWithDiscount : originalPrice;
+        
+        priceDisplay.textContent = formatCurrency(basePrice * quantity);
     }
 
-    // Incrementa la cantidad de un producto en la tarjeta
-    function increaseProductQuantity(event) {
-        const productCard = event.target.closest('.product-card');
-        const quantityInput = productCard.querySelector('.quantity-input-field');
-        quantityInput.value = parseInt(quantityInput.value) + 1;
-        handleProductQuantityChange({ target: quantityInput });
-    }
+    // --- MANEJADORES DE EVENTOS (EVENT LISTENERS) ---
 
-    // Decrementa la cantidad de un producto en la tarjeta
-    function decreaseProductQuantity(event) {
-        const productCard = event.target.closest('.product-card');
-        const quantityInput = productCard.querySelector('.quantity-input-field');
-        if (parseInt(quantityInput.value) > 1) {
-            quantityInput.value = parseInt(quantityInput.value) - 1;
-            handleProductQuantityChange({ target: quantityInput });
+    // Scroll para mostrar/ocultar navbar
+    window.onscroll = function() {
+        const show = window.pageYOffset > 200;
+        stickyNavbar.classList.toggle("show-on-scroll", show);
+        stickyNavbar.classList.toggle("hidden-on-scroll", !show);
+        floatingButtons.classList.toggle("show-on-scroll", show);
+        floatingButtons.classList.toggle("hidden-on-scroll", !show);
+    };
+
+    // Delegación de eventos para interacciones principales
+    mainContent.addEventListener('click', (event) => {
+        const target = event.target;
+        const productCard = target.closest('.product-card');
+
+        if (target.closest('.add-to-cart-btn')) {
+            addToCart(productCard);
         }
-    }
-
-    // Incrementa la cantidad de un producto en el carrito (modal)
-    function increaseCartQuantity(event) {
-        const index = parseInt(event.target.dataset.index);
-        updateCartItemQuantity(index, cart[index].quantity + 1);
-    }
-
-    // Decrementa la cantidad de un producto en el carrito (modal)
-    function decreaseCartQuantity(event) {
-        const index = parseInt(event.target.dataset.index);
-        if (cart[index].quantity > 1) {
-            updateCartItemQuantity(index, cart[index].quantity - 1);
-        } else {
-            // If quantity is 1 and user tries to decrease, remove item
-            removeFromCart(index);
+        else if (target.closest('.increase-quantity')) {
+            const input = productCard.querySelector('.quantity-input-field');
+            input.value = parseInt(input.value) + 1;
+            updateProductPrice(productCard);
         }
-    }
-
-
-    // --- Funciones de Utilidad (existente, sin cambios) ---
-
-    // Funci\u00F3n para actualizar el estado del local (Abierto/Cerrado/Pronto a cerrar)
-    function updateStoreStatus() {
-        const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const statusElement = document.getElementById('store-status');
-
-        // Limpiar clases de color anteriores
-        statusElement.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-red-500');
-
-        // L\u00F3gica para determinar el estado
-        if (hours >= 9 && hours < 23) { // De 9:00 a 22:59
-            statusElement.textContent = 'Abierto ahora';
-            statusElement.classList.add('bg-green-500');
-        } else if (hours === 23 && minutes >= 0 && minutes < 30) { // De 23:00 a 23:29
-            statusElement.textContent = 'Pronto a cerrar';
-            statusElement.classList.add('bg-yellow-500');
-        } else { // De 23:30 en adelante y antes de las 9:00
-            statusElement.textContent = 'Cerrado';
-            statusElement.classList.add('bg-red-500');
+        else if (target.closest('.decrease-quantity')) {
+            const input = productCard.querySelector('.quantity-input-field');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+                updateProductPrice(productCard);
+            }
         }
-    }
-
-    // --- Event Listeners ---
-    document.addEventListener('DOMContentLoaded', () => {
-        createDots(); // Inicializa los puntos del slider
-        updateStoreStatus(); // Establece el estado inicial del local
-        setInterval(updateStoreStatus, 60 * 1000); // Actualiza el estado cada minuto
-
-        // Event listener para los botones "Agregar"
-        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-            button.addEventListener('click', addToCart);
-        });
-
-        // Event listeners para los botones de cantidad en las tarjetas de producto
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.querySelector('.increase-quantity').addEventListener('click', increaseProductQuantity);
-            card.querySelector('.decrease-quantity').addEventListener('click', decreaseProductQuantity);
-            card.querySelector('.quantity-input-field').addEventListener('change', handleProductQuantityChange);
-        });
-
-        // Event listeners para abrir el modal del carrito
-        mainCartButton.addEventListener('click', openCartModal);
-        navCartButton.addEventListener('click', openCartModal);
-
-        // Event listener para cerrar el modal del carrito
-        closeCartModalButton.addEventListener('click', closeCartModal);
-
-        // Cerrar el modal si se hace clic fuera de su contenido
-        window.addEventListener('click', (event) => {
-            if (event.target === cartModal) {
-                closeCartModal();
-            }
-        });
-
-        // Event listener para enviar el pedido por WhatsApp
-        orderForm.addEventListener('submit', sendOrderViaWhatsApp);
-
-        // Event listeners para los botones de cantidad en los \u00EDtems del carrito (modal)
-        cartItemsContainer.addEventListener('click', (event) => {
-            if (event.target.classList.contains('increase-cart-quantity')) {
-                increaseCartQuantity(event);
-            } else if (event.target.classList.contains('decrease-cart-quantity')) {
-                decreaseCartQuantity(event);
-            } else if (event.target.closest('.remove-from-cart-btn')) {
-                const index = parseInt(event.target.closest('.remove-from-cart-btn').dataset.index);
-                removeFromCart(index);
-            }
-        });
-
-        // Event listener para cambiar la cantidad en el carrito desde el input num\u00E9rico (modal)
-        cartItemsContainer.addEventListener('change', (event) => {
-            if (event.target.classList.contains('cart-quantity-input')) {
-                const index = parseInt(event.target.dataset.index);
-                const newQuantity = parseInt(event.target.value);
-                updateCartItemQuantity(index, newQuantity);
-            }
-        });
-
-        // JavaScript para el scroll suave de las categor\u00EDas y activar la pesta\u00F1a
-        document.querySelectorAll('.category-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const targetId = this.dataset.target;
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    const stickyNavbarHeight = document.getElementById('sticky-navbar').offsetHeight;
-                    // Obtener la posici\u00F3n del elemento, ajustando por la altura del navbar fijo y un margen adicional
-                    const adjustedOffset = targetElement.getBoundingClientRect().top + window.pageYOffset - stickyNavbarHeight - 20;
-
-                    window.scrollTo({
-                        top: adjustedOffset,
-                        behavior: 'smooth'
-                    });
-
-                    // Actualizar la clase activa de la pesta\u00F1a
-                    document.querySelectorAll('.category-btn').forEach(btn => {
-                        btn.classList.remove('text-yellow-500', 'border-yellow-500');
-                        btn.classList.add('hover:text-red-600', 'border-transparent', 'hover:border-red-600');
-                    });
-                    this.classList.add('text-yellow-500', 'border-yellow-500');
-                    this.classList.remove('hover:text-red-600', 'border-transparent', 'hover:border-red-600');
-                }
-            });
-        });
     });
 
-    // JavaScript para mostrar/ocultar la barra de navegaci\u00F3n fija y los botones flotantes
-    window.onscroll = function() {
-        const scrollThreshold = 200; // Ajusta este valor si es necesario
-        if (window.pageYOffset > scrollThreshold) {
-            stickyNavbar.classList.add("show-on-scroll");
-            stickyNavbar.classList.remove("hidden-on-scroll");
-            floatingButtons.classList.add("show-on-scroll");
-            floatingButtons.classList.remove("hidden-on-scroll");
-        } else {
-            stickyNavbar.classList.add("hidden-on-scroll");
-            stickyNavbar.classList.remove("show-on-scroll");
-            floatingButtons.classList.add("hidden-on-scroll");
-            floatingButtons.classList.remove("show-on-scroll");
+    mainContent.addEventListener('change', (event) => {
+        if (event.target.classList.contains('quantity-input-field')) {
+            const productCard = event.target.closest('.product-card');
+            if(parseInt(event.target.value) < 1) event.target.value = 1;
+            updateProductPrice(productCard);
         }
-    };
-  </script>
+    });
+    
+    // Delegación de eventos para el modal del carrito
+    cartItemsContainer.addEventListener('click', (event) => {
+        const target = event.target;
+        const index = parseInt(target.closest('[data-index]')?.dataset.index);
+
+        if (isNaN(index)) return;
+
+        if (target.closest('.increase-cart-quantity')) {
+            updateCartItemQuantity(index, cart[index].quantity + 1);
+        } else if (target.closest('.decrease-cart-quantity')) {
+            updateCartItemQuantity(index, cart[index].quantity - 1);
+        } else if (target.closest('.remove-from-cart-btn')) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+    });
+
+    cartItemsContainer.addEventListener('change', (event) => {
+        if (event.target.classList.contains('cart-quantity-input')) {
+            const index = parseInt(event.target.dataset.index);
+            let newQuantity = parseInt(event.target.value);
+            if (isNaN(newQuantity) || newQuantity < 1) newQuantity = 1;
+            updateCartItemQuantity(index, newQuantity);
+        }
+    });
+
+    // Eventos para abrir/cerrar el modal
+    mainCartButton.addEventListener('click', () => toggleCartModal(true));
+    navCartButton.addEventListener('click', () => toggleCartModal(true));
+    closeCartModalButton.addEventListener('click', () => toggleCartModal(false));
+    window.addEventListener('click', (event) => {
+        if (event.target === cartModal) toggleCartModal(false);
+    });
+
+    // Enviar pedido
+    orderForm.addEventListener('submit', handleSendOrder);
+
+    // Navegación por categorías
+    categoryNav.addEventListener('click', (event) => {
+        const button = event.target.closest('.category-btn');
+        if (!button) return;
+
+        const targetId = button.dataset.target;
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            const stickyNavbarHeight = stickyNavbar.offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const adjustedOffset = targetPosition - stickyNavbarHeight - 20;
+
+            window.scrollTo({ top: adjustedOffset, behavior: 'smooth' });
+
+            // Actualizar estilo de pestaña activa
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('text-yellow-500', 'border-yellow-500');
+                btn.classList.add('hover:text-red-600', 'border-transparent', 'hover:border-red-600');
+            });
+            button.classList.add('text-yellow-500', 'border-yellow-500');
+            button.classList.remove('hover:text-red-600', 'border-transparent', 'hover:border-red-600');
+        }
+    });
+
+    // --- INICIALIZACIÓN ---
+    createDots();
+    startSlider();
+    sliderWrapper.addEventListener('mouseenter', stopSlider);
+    sliderWrapper.addEventListener('mouseleave', startSlider);
+    updateStoreStatus();
+    setInterval(updateStoreStatus, 60000); // Actualiza cada minuto
+});
+</script>
  </body>
 </html>
