@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+
+
 <html lang="es">
  <head>
   <meta charset="utf-8"/>
@@ -11,9 +13,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <!-- Usando la fuente Inter para un aspecto moderno y limpio -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-
   <style>
-    
    /* Estilos personalizados para un mejor control visual */
     body {
         font-family: 'Inter', sans-serif;
@@ -44,6 +44,22 @@
         scrollbar-width: none;  /* Firefox */
     }
 
+    /* Estilos para el banner de descuento */
+    .discount-banner {
+        background-size: cover;
+        background-position: center;
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        height: 150px; /* Altura específica para el banner */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem; /* text-2xl */
+    }
+
     /* Animaciones sutiles para los elementos de producto */
     .product-card {
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -61,10 +77,12 @@
         border-radius: 0.75rem;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
+
     .slider-wrapper {
         display: flex;
         transition: transform 0.5s ease-in-out;
     }
+
     .slider-item {
         min-width: 100%;
         box-sizing: border-box;
@@ -79,11 +97,14 @@
         font-size: 1.5rem;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para el texto */
     }
+
+    /* Ajuste para que el slider sea más grande en desktop */
     @media (min-width: 1024px) { /* lg breakpoint */
         .slider-item {
             height: 300px; /* Mayor altura para pantallas de escritorio */
         }
     }
+
     .slider-dots {
         position: absolute;
         bottom: 10px;
@@ -92,6 +113,7 @@
         display: flex;
         gap: 8px;
     }
+
     .dot {
         width: 10px;
         height: 10px;
@@ -100,6 +122,7 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
+
     .dot.active {
         background-color: white;
     }
@@ -109,20 +132,49 @@
         border-bottom-width: 3px;
     }
 
+    /* Corrección para mobile: Asegurar que el header-info no se superponga */
+    @media (max-width: 640px) {
+        header {
+            height: 280px; /* Aumenta la altura del header para acomodar el contenido */
+        }
+        .header-info {
+            position: relative; /* Cambiado a relativo para que fluya con el documento */
+            margin-top: -3rem; /* Ajuste para subir el bloque de info sin superposición */
+            padding-bottom: 2rem; /* Más espacio en la parte inferior del bloque de info */
+            border-bottom-left-radius: 1.5rem; /* Añadir rounded-b */
+            border-bottom-right-radius: 1.5rem; /* Añadir rounded-b */
+            margin-bottom: 0; /* Eliminar margen negativo para evitar ocultamiento de texto */
+        }
+        .main-content {
+            padding-top: 1rem; /* Reducir el padding superior para mobile */
+        }
+        .status-button {
+            margin-top: 0.5rem; /* Espacio extra para el botón de estado en mobile */
+            font-size: 0.875rem; /* Tamaño de fuente más pequeño para mobile */
+            padding: 0.3rem 0.7rem; /* Padding ajustado para mobile */
+        }
+        /* Ajuste para el espaciado de los iconos flotantes en mobile */
+        .floating-buttons {
+            bottom: 6rem; /* Subir los botones para que no choquen con el footer en mobile */
+            right: 1rem; /* Ajuste a la derecha */
+        }
+    }
+
     /* Estilos para el modal del carrito */
     .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
         left: 0;
         top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.4);
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         justify-content: center;
         align-items: center;
     }
+
     .modal-content {
         background-color: #fefefe;
         margin: auto;
@@ -132,28 +184,31 @@
         position: relative;
         width: 90%;
         max-width: 600px;
-        max-height: 90vh;
-        overflow-y: auto;
+        max-height: 90vh; /* Limitar la altura del modal */
+        overflow-y: auto; /* Habilitar scroll interno si el contenido es largo */
         animation-name: animatetop;
         animation-duration: 0.4s;
     }
+
+    /* Animación de entrada para el modal */
     @keyframes animatetop {
         from {top: -300px; opacity: 0}
         to {top: 0; opacity: 1}
     }
+
     .close-button {
         color: #aaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
     }
+
     .close-button:hover,
     .close-button:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
     }
-
     /* Estilos para los controles de cantidad mejorados */
     .quantity-controls {
         display: flex;
@@ -161,12 +216,13 @@
         justify-content: center;
         width: 100%;
         margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.5rem; /* Espacio adicional para las notas */
     }
+
     .quantity-button {
         background-color: #ef4444; /* red-500 */
         color: white;
-        font-size: 1.25rem;
+        font-size: 1.25rem; /* text-xl */
         font-weight: bold;
         width: 40px;
         height: 40px;
@@ -178,97 +234,35 @@
         transition: background-color 0.2s ease, transform 0.2s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
     .quantity-button:hover {
         background-color: #dc2626; /* red-600 */
         transform: scale(1.05);
     }
+
     .quantity-input-field {
-        width: 60px;
+        width: 60px; /* Ancho fijo para el campo de cantidad */
         text-align: center;
         padding: 0.5rem;
         margin: 0 0.5rem;
         border: 1px solid #d1d5db; /* gray-300 */
         border-radius: 0.375rem; /* rounded-md */
         font-size: 1rem;
-        -moz-appearance: textfield;
+        -moz-appearance: textfield; /* Hide Firefox stepper arrows */
     }
+    /* Hide Chrome, Safari, Edge, Opera stepper arrows */
     .quantity-input-field::-webkit-outer-spin-button,
     .quantity-input-field::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
-    .form-input-error {
-        border-color: #ef4444; /* red-500 */
-        box-shadow: 0 0 0 1px #ef4444;
-    }
 
-    /* Estilos para las notificaciones Toast */
-    #toast-container {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 2000;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .toast {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 1rem 1.5rem;
-        border-radius: 0.5rem;
-        color: white;
-        font-weight: 500;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-        transform: translateX(120%);
-        transition: transform 0.5s ease-in-out;
-    }
-    .toast.show {
-        transform: translateX(0);
-    }
-    .toast.success {
-        background-color: #16a34a; /* green-600 */
-    }
-    .toast.error {
-        background-color: #dc2626; /* red-600 */
-    }
-    .toast-icon {
-        font-size: 1.5rem;
-    }
-
-    /* Correcciones para mobile y responsive */
-    @media (max-width: 640px) {
-        header {
-            height: auto;
-        }
-        .header-info {
-            position: relative;
-            margin-top: -4rem;
-            padding-bottom: 1.5rem;
-            border-bottom-left-radius: 1.5rem;
-            border-bottom-right-radius: 1.5rem;
-            margin-bottom: 0;
-        }
-        .main-content {
-            padding-top: 1rem;
-        }
-        .status-button {
-            margin-top: 0.5rem;
-            font-size: 0.875rem;
-            padding: 0.3rem 0.7rem;
-        }
-        .floating-buttons {
-            bottom: 1.5rem;
-            right: 1.5rem;
-        }
-    }
   </style>
  </head>
  <body class="bg-gray-50">
   <!-- Header principal con imagen de fondo y elementos superpuestos -->
   <header class="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden">
-   <img alt="Imagen de fondo con múltiples hamburguesas apiladas y una pared de ladrillos detrás" class="w-full h-full object-cover" height="350" src="https://storage.googleapis.com/a1aa/image/51eaa911-562d-4bc6-d0cf-d859d97d1590.jpg" width="1920"/>
+   <img alt="Imagen de fondo con múltiples hamburguesas apiladas y una pared de ladrillos detrás" class="w-full h-full object-cover" height="350" src="https://storage.googleapis.com/a1aa/image/51eaa911-562d-4bc6-d0cf-d859d97d1590.jpg" width="1920">
    <div class="absolute inset-0 bg-black opacity-30">
    </div>
    <!-- Botón de iniciar sesión en la esquina superior derecha del header -->
@@ -284,7 +278,7 @@
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
      <div class="flex items-center gap-4">
       <!-- Logotipo circular de Pizzas Love con icono de pizza y texto -->
-      <img alt="Logotipo circular de Pizzas Love" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg border-4 border-white" height="80" src="./logo.png" width="80"/>
+      <img alt="Logotipo circular de Pizzas Love" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg border-4 border-white" height="80" src="./logo2.png" width="80">
       <div>
        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
         Pizzas Love
@@ -305,9 +299,7 @@
          </span>
         </div>
         <!-- Botón de estado del local (Abierto/Cerrado) -->
-        <span id="store-status" class="status-button px-3 py-1 rounded-full text-white text-xs font-semibold transition-colors duration-300 ease-in-out">
-         <!-- El texto y el color se establecen con JavaScript -->
-        </span>
+        <span id="store-status" class="status-button px-3 py-1 rounded-full text-white text-xs font-semibold transition-colors duration-300 ease-in-out bg-green-500">Abierto ahora</span>
        </div>
       </div>
      </div>
@@ -346,9 +338,9 @@
    </div>
   </header>
   <!-- Menú de navegación fijo que aparece al hacer scroll -->
-  <nav id="sticky-navbar" class="fixed top-0 left-0 right-0 bg-white shadow-md p-4 flex items-center justify-between z-50 hidden-on-scroll">
+  <nav id="sticky-navbar" class="fixed top-0 left-0 right-0 bg-white shadow-md p-4 flex items-center justify-between z-50 show-on-scroll">
    <div class="flex items-center gap-4 ml-4">
-    <img alt="Logotipo circular de Pizzas Love en la barra de navegación" class="w-10 h-10 rounded-full" height="40" src="./logo.png" width="40"/>
+    <img alt="Logotipo circular de Pizzas Love en la barra de navegación" class="w-10 h-10 rounded-full" height="40" src="./logo2.png" width="40">
     <span class="text-lg font-bold text-gray-900">
      Pizzas Love
     </span>
@@ -368,8 +360,8 @@
      Ofertas Especiales
     </h2>
     <div class="slider-container">
-     <div class="slider-wrapper" id="slider-wrapper">
-      <div class="slider-item" style="background-image: url('https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg');">
+     <div class="slider-wrapper" id="slider-wrapper" style="transform: translateX(-200%);">
+      <div class="slider-item" style="background-image: url('./banner-navidad-1.png');">
        <p class="text-3xl sm:text-4xl">
         ¡Navidad Pizzas Love!
        </p>
@@ -390,8 +382,7 @@
        </p>
       </div>
      </div>
-     <div class="slider-dots" id="slider-dots">
-     </div>
+     <div class="slider-dots" id="slider-dots"><span class="dot"></span><span class="dot"></span><span class="dot active"></span><span class="dot"></span></div>
     </div>
    </section>
    <!-- Nueva Sección de COMBOS -->
@@ -408,7 +399,7 @@
       <p class="text-sm text-gray-600 mb-3">
        1 Pizza Grande (salsa, jamón, queso, 1 ingrediente adicional) + glup 1 litro
       </p>
-      <img alt="Combo 1: Pizza grande y bebida de 1 litro" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 1: Pizza grande y bebida de 1 litro" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $7.50
       </span>
@@ -416,13 +407,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -435,7 +425,7 @@
       <p class="text-sm text-gray-600 mb-3">
        1 Pizza Grande (salsa, jamón, queso, 2 ingredientes adicionales) + glup 1 LT
       </p>
-      <img alt="Combo 2: Pizza grande con dos ingredientes y bebida de 1 litro" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 2: Pizza grande con dos ingredientes y bebida de 1 litro" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $8.50
       </span>
@@ -443,13 +433,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -462,7 +451,7 @@
       <p class="text-sm text-gray-600 mb-3">
        2 Pizzas Grandes (salsa, jamón, queso) + glup 2 litros
       </p>
-      <img alt="Combo 3: Dos pizzas grandes y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 3: Dos pizzas grandes y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $12.00
       </span>
@@ -470,13 +459,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -489,7 +477,7 @@
       <p class="text-sm text-gray-600 mb-3">
        2 Pizzas Grandes (salsa, jamón, queso, 1 ingrediente adicional) + glup 2 litros
       </p>
-      <img alt="Combo 4: Dos pizzas grandes con un ingrediente y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 4: Dos pizzas grandes con un ingrediente y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $14.00
       </span>
@@ -497,13 +485,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -516,7 +503,7 @@
       <p class="text-sm text-gray-600 mb-3">
        2 Pizzas Grandes (salsa, jamón, queso, 2 ingredientes adicionales) + glup 2 litros
       </p>
-      <img alt="Combo 5: Dos pizzas grandes con dos ingredientes y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200"/>
+      <img alt="Combo 5: Dos pizzas grandes con dos ingredientes y bebida de 2 litros" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/8b8e416b-5fdb-484d-a6df-0bacbbab1df1.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $16.00
       </span>
@@ -524,13 +511,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -586,7 +572,7 @@
       <p class="text-sm text-gray-600 mb-3">
        La clásica con mucho pepperoni y extra queso mozzarella.
       </p>
-      <img alt="Pizza de Pepperoni" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
+      <img alt="Pizza de Pepperoni" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $10.99
       </span>
@@ -594,13 +580,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -613,7 +598,7 @@
       <p class="text-sm text-gray-600 mb-3">
        Tomate fresco, mozzarella de búfala y albahaca. Simplemente perfecta.
       </p>
-      <img alt="Pizza Margherita" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
+      <img alt="Pizza Margherita" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $9.99
       </span>
@@ -621,13 +606,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -640,7 +624,7 @@
       <p class="text-sm text-gray-600 mb-3">
        Jamón de calidad, piña jugosa y queso fundido. Un clásico amado.
       </p>
-      <img alt="Pizza Hawaiana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
+      <img alt="Pizza Hawaiana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $11.50
       </span>
@@ -648,13 +632,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -667,7 +650,7 @@
       <p class="text-sm text-gray-600 mb-3">
        Variedad de vegetales frescos de temporada sobre una cama de queso.
       </p>
-      <img alt="Pizza Vegetariana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
+      <img alt="Pizza Vegetariana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $10.50
       </span>
@@ -675,13 +658,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -694,7 +676,7 @@
       <p class="text-sm text-gray-600 mb-3">
        Una mezcla irresistible de mozzarella, provolone, gorgonzola y parmesano.
       </p>
-      <img alt="Pizza Cuatro Quesos" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
+      <img alt="Pizza Cuatro Quesos" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $12.00
       </span>
@@ -702,13 +684,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -721,7 +702,7 @@
       <p class="text-sm text-gray-600 mb-3">
        Pollo a la barbacoa, cebolla morada y cilantro. ¡Explosión de sabor!
       </p>
-      <img alt="Pizza Barbacoa" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
+      <img alt="Pizza Barbacoa" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $12.50
       </span>
@@ -729,13 +710,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -748,7 +728,7 @@
       <p class="text-sm text-gray-600 mb-3">
        Carne molida, jalapeños, cebolla y salsa picante. ¡Para los amantes del picante!
       </p>
-      <img alt="Pizza Mexicana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200"/>
+      <img alt="Pizza Mexicana" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove2.png.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $11.80
       </span>
@@ -756,13 +736,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -794,7 +773,7 @@
       <p class="text-sm text-gray-600 mb-3">
        225 gramos de proteína
       </p>
-      <img alt="Basic Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove3.png.jpg" width="200"/>
+      <img alt="Basic Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="./pizzaslove3.png.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $8.99
@@ -810,13 +789,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -829,7 +807,7 @@
       <p class="text-sm text-gray-600 mb-3">
        225 gramos de proteína
       </p>
-      <img alt="Deluxe Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/c874454e-e066-4282-e420-2800fe25f561.jpg" width="200"/>
+      <img alt="Deluxe Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/c874454e-e066-4282-e420-2800fe25f561.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $13.59
@@ -845,13 +823,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -864,7 +841,7 @@
       <p class="text-sm text-gray-600 mb-3">
        350 gramos de proteína
       </p>
-      <img alt="Doble Roof Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/e70df619-31e6-4fbd-c452-1a18ad3ab2dc.jpg" width="200"/>
+      <img alt="Doble Roof Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/e70df619-31e6-4fbd-c452-1a18ad3ab2dc.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $13.59
@@ -880,13 +857,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -899,7 +875,7 @@
       <p class="text-sm text-gray-600 mb-3">
        525 gramos de proteína
       </p>
-      <img alt="Triple Roof Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/ff6443bd-b3a5-4fbd-16a4-9d5b2a1831ca.jpg" width="200"/>
+      <img alt="Triple Roof Burger con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/ff6443bd-b3a5-4fbd-16a4-9d5b2a1831ca.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $16.59
@@ -915,13 +891,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -934,7 +909,7 @@
       <p class="text-sm text-gray-600 mb-3">
        450 gramos de proteína
       </p>
-      <img alt="Dos Cheddar Burgers con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/a626f0b0-bef6-495e-2887-2b01e0c0f00d.jpg" width="200"/>
+      <img alt="Dos Cheddar Burgers con papas fritas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/a626f0b0-bef6-495e-2887-2b01e0c0f00d.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $15.99
@@ -950,13 +925,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -977,7 +951,7 @@
       <p class="text-sm text-gray-600 mb-3">
        5 camarones con salsa, con sabor a la costa de mar
       </p>
-      <img alt="Camarones apanados con salsa para mojar en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/9661095f-4efd-4b69-9582-aaa792c7bd6c.jpg" width="200"/>
+      <img alt="Camarones apanados con salsa para mojar en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/9661095f-4efd-4b69-9582-aaa792c7bd6c.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $6.99
@@ -993,13 +967,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1012,7 +985,7 @@
       <p class="text-sm text-gray-600 mb-3">
        10 aros de cebolla con salsa BBQ / tártara
       </p>
-      <img alt="Aros de cebolla con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/afb367a8-567e-4880-972f-d371b993a342.jpg" width="200"/>
+      <img alt="Aros de cebolla con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/afb367a8-567e-4880-972f-d371b993a342.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $5.89
@@ -1028,13 +1001,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1047,7 +1019,7 @@
       <p class="text-sm text-gray-600 mb-3">
        6 palitos con salsa BBQ / tártara
       </p>
-      <img alt="Palitos de mozzarella con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/15bb5c2f-56fc-46ca-4f5b-79608eab9a5d.jpg" width="200"/>
+      <img alt="Palitos de mozzarella con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/15bb5c2f-56fc-46ca-4f5b-79608eab9a5d.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $5.99
@@ -1063,13 +1035,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1082,7 +1053,7 @@
       <p class="text-sm text-gray-600 mb-3">
        6 nuggets con salsa BBQ / tártara
       </p>
-      <img alt="Nuggets de pollo con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/55b57428-fed5-4044-f68a-1d477ca11ebf.jpg" width="200"/>
+      <img alt="Nuggets de pollo con salsa BBQ y tártara en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/55b57428-fed5-4044-f68a-1d477ca11ebf.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $5.89
@@ -1098,13 +1069,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1117,7 +1087,7 @@
       <p class="text-sm text-gray-600 mb-3">
        225 gramos de papas rústicas
       </p>
-      <img alt="Papas rústicas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/675b4f42-31a9-4657-d077-182ee563916e.jpg" width="200"/>
+      <img alt="Papas rústicas en un plato blanco" class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/675b4f42-31a9-4657-d077-182ee563916e.jpg" width="200">
       <div class="flex items-center gap-2 mt-auto">
        <span class="text-xl font-bold text-gray-900 price-display">
         $6.49
@@ -1133,13 +1103,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1165,7 +1134,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
      <!-- Panqueques rellenos con manjar -->
      <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card" data-description="4 unidades de panqueques rellenos con manjar, cubiertos con azúcar flor" data-name="Panqueques rellenos con manjar" data-original-price="4.99" data-price="3.99">
-      <img alt="Panqueques rellenos con manjar en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/5aaabb00-bd46-4c10-aa20-af01e5674d8f.jpg" width="120"/>
+      <img alt="Panqueques rellenos con manjar en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/5aaabb00-bd46-4c10-aa20-af01e5674d8f.jpg" width="120">
       <div class="flex flex-col justify-between flex-grow">
        <div>
         <h4 class="text-lg font-semibold text-gray-900 mb-1">
@@ -1190,13 +1159,12 @@
         <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
          -
         </button>
-        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
         <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
          +
         </button>
        </div>
-       <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-       </textarea>
+       <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">       </textarea>
        <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
         Agregar
        </button>
@@ -1204,7 +1172,7 @@
      </div>
      <!-- Churros con Manjar y chocolate -->
      <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card" data-description="6 unidades de churros con manjar y chocolate, cubiertos con azúcar flor" data-name="Churros con Manjar y chocolate" data-original-price="4.99" data-price="3.99">
-      <img alt="Churros con manjar y chocolate en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/ff299b77-0124-40d9-2055-47ad996af4e7.jpg" width="120"/>
+      <img alt="Churros con manjar y chocolate en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/ff299b77-0124-40d9-2055-47ad996af4e7.jpg" width="120">
       <div class="flex flex-col justify-between flex-grow">
        <div>
         <h4 class="text-lg font-semibold text-gray-900 mb-1">
@@ -1229,13 +1197,12 @@
         <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
          -
         </button>
-        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
         <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
          +
         </button>
        </div>
-       <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-       </textarea>
+       <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">       </textarea>
        <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
         Agregar
        </button>
@@ -1243,7 +1210,7 @@
      </div>
      <!-- Churros con azúcar flor -->
      <div class="bg-white rounded-xl shadow-lg p-4 flex gap-4 product-card" data-description="6 unidades de churros con azúcar flor, cubiertos con azúcar flor" data-name="Churros con azúcar flor" data-original-price="4.99" data-price="3.99">
-      <img alt="Churros con azúcar glas en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/0723d0db-71ab-4062-9970-290437f138f8.jpg" width="120"/>
+      <img alt="Churros con azúcar glas en un plato blanco" class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100" src="https://storage.googleapis.com/a1aa/image/0723d0db-71ab-4062-9970-290437f138f8.jpg" width="120">
       <div class="flex flex-col justify-between flex-grow">
        <div>
         <h4 class="text-lg font-semibold text-gray-900 mb-1">
@@ -1268,13 +1235,12 @@
         <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
          -
         </button>
-        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+        <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
         <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
          +
         </button>
        </div>
-       <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-       </textarea>
+       <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">       </textarea>
        <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
         Agregar
        </button>
@@ -1296,7 +1262,7 @@
       <p class="text-sm text-gray-600 mb-3">
        500 ml
       </p>
-      <img alt="Botella de Agua Mineral Sin Gas" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/94815b87-a0be-43d9-fe34-c61f4be0f3b2.jpg" width="200"/>
+      <img alt="Botella de Agua Mineral Sin Gas" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/94815b87-a0be-43d9-fe34-c61f4be0f3b2.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1304,13 +1270,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1323,7 +1288,7 @@
       <p class="text-sm text-gray-600 mb-3">
        355 ml
       </p>
-      <img alt="Lata de CocaCola Light" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/6f510bff-cc4d-4799-3058-f7c6188392ed.jpg" width="200"/>
+      <img alt="Lata de CocaCola Light" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/6f510bff-cc4d-4799-3058-f7c6188392ed.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1331,13 +1296,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1350,7 +1314,7 @@
       <p class="text-sm text-gray-600 mb-3">
        355 ml
       </p>
-      <img alt="Lata de Fanta Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/162ab2eb-0996-4dfe-2d14-820e93848693.jpg" width="200"/>
+      <img alt="Lata de Fanta Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/162ab2eb-0996-4dfe-2d14-820e93848693.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1358,13 +1322,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1377,7 +1340,7 @@
       <p class="text-sm text-gray-600 mb-3">
        355 ml
       </p>
-      <img alt="Lata de Fanta Zero" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/4c1c6820-bbb3-46b0-d0ff-8ae0c528d0fd.jpg" width="200"/>
+      <img alt="Lata de Fanta Zero" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/4c1c6820-bbb3-46b0-d0ff-8ae0c528d0fd.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1385,13 +1348,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1404,7 +1366,7 @@
       <p class="text-sm text-gray-600 mb-3">
        355 ml
       </p>
-      <img alt="Lata de Sprite Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/2cf1cde9-d253-4db6-e604-7edbbb811ff2.jpg" width="200"/>
+      <img alt="Lata de Sprite Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/2cf1cde9-d253-4db6-e604-7edbbb811ff2.jpg" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1412,13 +1374,12 @@
        <button class="quantity-button decrease-quantity" aria-label="Disminuir cantidad">
         -
        </button>
-       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad"/>
+       <input class="quantity-input-field" min="1" type="number" value="1" aria-label="Cantidad">
        <button class="quantity-button increase-quantity" aria-label="Aumentar cantidad">
         +
        </button>
       </div>
-      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">
-      </textarea>
+      <textarea class="w-full mt-2 p-2 border border-gray-300 rounded-md text-sm notes-input" placeholder="Notas / Ingredientes extra (opcional)">      </textarea>
       <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out add-to-cart-btn">
        Agregar
       </button>
@@ -1431,7 +1392,7 @@
       <p class="text-sm mb-3">
        No Disponible
       </p>
-      <img alt="Lata de CocaCola Zero" class="rounded-lg w-full h-36 object-contain mb-4 opacity-50 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/cd990c72-a83c-49de-dc59-c3c1269d4dbd.jpg" width="200"/>
+      <img alt="Lata de CocaCola Zero" class="rounded-lg w-full h-36 object-contain mb-4 opacity-50 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/cd990c72-a83c-49de-dc59-c3c1269d4dbd.jpg" width="200">
       <i class="fas fa-ban text-5xl text-gray-400 opacity-75">
       </i>
      </div>
@@ -1443,16 +1404,17 @@
       <p class="text-sm mb-3">
        No Disponible
       </p>
-      <img alt="Lata de Quatro Zero" class="rounded-lg w-full h-36 object-contain mb-4 opacity-50 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/1527272c-da98-4404-cccb-b08524ea7753.jpg" width="200"/>
+      <img alt="Lata de Quatro Zero" class="rounded-lg w-full h-36 object-contain mb-4 opacity-50 shadow-sm" height="140" src="https://storage.googleapis.com/a1aa/image/1527272c-da98-4404-cccb-b08524ea7753.jpg" width="200">
       <i class="fas fa-ban text-5xl text-gray-400 opacity-75">
       </i>
      </div>
     </div>
    </section>
    <!-- Botones flotantes (WhatsApp y Carrito) -->
-   <div class="floating-buttons fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+   <div class="floating-buttons fixed bottom-6 right-6 flex flex-col gap-3 z-50 show-on-scroll">
     <!-- Botón de WhatsApp flotante -->
-    <a class="bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300 ease-in-out" href="https://wa.me/5804120403343" target="_blank" aria-label="Contactar por WhatsApp">
+    <a class="bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300 ease-in-out" href="https://api.whatsapp.com/send/?phone=5804120403343&text=%C2%A1Hola!%20👋%20Soy%20cliente%20de%20PizzasLove%20y%20quiero%20realizar%20un%20nuevo%20pedido%20🍕🔥%0A%0APor%20favor%2C%20ay%C3%BAdame%20a%20confirmar%20la%20disponibilidad%20y%20opciones%20para%20hoy.%0A%0A%F0%9F%86%94%20C%C3%B3digo%20de%20cliente%3A%20PZL-ORDER-2025%0A%0AEstoy%20listo%20para%20hacer%20mi%20pedido%20ahora%20mismo.%20%F0%9F%99%8C
+" target="_blank" aria-label="Contactar por WhatsApp">
      <i class="fab fa-whatsapp text-2xl">
      </i>
     </a>
@@ -1470,7 +1432,7 @@
   <div class="modal" id="cart-modal">
    <div class="modal-content">
     <span class="close-button" id="close-cart-modal" aria-label="Cerrar modal">
-     &times;
+     ×
     </span>
     <h2 class="text-2xl font-bold text-gray-900 mb-6">
      Tu Carrito de Compras
@@ -1486,32 +1448,30 @@
     <h3 class="text-xl font-semibold text-gray-800 mb-4">
      Datos del Pedido
     </h3>
-    <form class="space-y-4" id="order-form" novalidate>
+    <form class="space-y-4" id="order-form" novalidate="">
      <div>
       <label class="block text-sm font-medium text-gray-700" for="customer-name">
        Nombre:
       </label>
-      <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-name" required="" type="text"/>
+      <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-name" required="" type="text">
      </div>
      <div>
       <label class="block text-sm font-medium text-gray-700" for="customer-lastname">
        Apellido:
       </label>
-      <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-lastname" required="" type="text"/>
+      <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-lastname" required="" type="text">
      </div>
      <div>
       <label class="block text-sm font-medium text-gray-700" for="customer-address">
        Dirección:
       </label>
-      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-address" required="" rows="3">
-      </textarea>
+      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-address" required="" rows="3">      </textarea>
      </div>
      <div>
       <label class="block text-sm font-medium text-gray-700" for="extra-notes">
        Notas / Ingredientes extras para el pedido general:
       </label>
-      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="extra-notes" rows="3">
-      </textarea>
+      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="extra-notes" rows="3">      </textarea>
      </div>
      <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition transform hover:scale-105 duration-300 ease-in-out flex items-center justify-center gap-2" id="send-whatsapp-order" type="submit">
       <i class="fab fa-whatsapp text-xl">
@@ -1537,7 +1497,7 @@
       <i class="fas fa-envelope text-red-500 text-lg">
       </i>
       <a class="hover:underline text-red-500 hover:text-red-600 transition font-medium" href="mailto:contacto@estudioguacamaya.cl">
-       contacto@estudioguacamaya.cl
+       contactopizzaslove@gmail.com
       </a>
      </div>
      <div class="flex items-center gap-2 justify-center md:justify-start text-base">
@@ -1550,14 +1510,15 @@
      <div class="flex items-center gap-2 justify-center md:justify-start text-base">
       <i class="fab fa-whatsapp text-green-500 text-lg">
       </i>
-      <a class="hover:underline hover:text-green-600 transition text-gray-600 font-medium" href="tel:+5804120403343">
+      <a class="hover:underline hover:text-green-600 transition text-gray-600 font-medium" href="https://api.whatsapp.com/send/?phone=5804120403343&text=%C2%A1Hola!%20👋%20Soy%20cliente%20de%20PizzasLove%20y%20quiero%20realizar%20un%20nuevo%20pedido%20🍕🔥%0A%0APor%20favor%2C%20ay%C3%BAdame%20a%20confirmar%20la%20disponibilidad%20y%20opciones%20para%20hoy.%0A%0A%F0%9F%86%94%20C%C3%B3digo%20de%20cliente%3A%20PZL-ORDER-2025%0A%0AEstoy%20listo%20para%20hacer%20mi%20pedido%20ahora%20mismo.%20%F0%9F%99%8C
+">
        +58 0412 0403343
       </a>
      </div>
     </div>
     <!-- Columna central con logo y redes sociales -->
     <div class="flex flex-col items-center gap-6 md:mt-8 mx-auto">
-     <img alt="Logotipo de Pizzas Love en el pie de página" class="w-36 h-auto" height="40" src="./logo.png" width="120"/>
+     <img alt="Logotipo de Pizzas Love en el pie de página" class="w-36 h-auto" height="40" src="./logo.png" width="120">
      <div class="flex gap-8 text-gray-700">
       <a aria-label="Facebook" class="hover:text-red-600 transition transform hover:scale-125" href="#">
        <i class="fab fa-facebook-f text-3xl">
@@ -1574,7 +1535,7 @@
      <p class="text-gray-700 font-semibold text-base">
       Diseñado por
      </p>
-     <img alt="Logotipo de Estudio Guacamaya" class="mx-auto md:mx-0 w-40 h-auto" height="40" src="https://placehold.co/160x40/FF0000/FFFFFF?text=Estudio+Guacamaya" width="160"/>
+     <img alt="Logotipo de Estudio Guacamaya" class="mx-auto md:mx-0 w-40 h-auto" height="40" src="https://placehold.co/160x40/FF0000/FFFFFF?text=Estudio+Guacamaya" width="160">
     </div>
    </div>
    <!-- Mapa de Google Maps -->
@@ -2009,5 +1970,7 @@
     setInterval(updateStoreStatus, 60000); // Actualiza cada minuto
 });
 </script>
- </body>
+ 
+
+</body>
 </html>
