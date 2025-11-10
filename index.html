@@ -1,6 +1,5 @@
-
-
-
+html
+<!DOCTYPE html>
 <html lang="es">
  <head>
   <meta charset="utf-8"/>
@@ -256,7 +255,58 @@
         -webkit-appearance: none;
         margin: 0;
     }
-
+    /* Estilos para el checkout mejorado */
+    .payment-option-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+    .payment-option-btn:hover {
+        border-color: #ef4444;
+        background-color: #fef2f2;
+        transform: translateY(-2px);
+    }
+    .payment-details-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+        background-color: #f9fafb;
+        border-radius: 0.5rem;
+        border: 1px solid #e5e7eb;
+    }
+    .copy-btn {
+        background-color: #e5e7eb; /* gray-200 */
+        color: #4b5563; /* gray-600 */
+        padding: 0.35rem 0.6rem;
+        border-radius: 0.375rem; /* rounded-md */
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s;
+        font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+        background-color: #d1d5db; /* gray-300 */
+        color: #1f2937; /* gray-800 */
+    }
+    .payment-reminder {
+        background-color: #fefce8; /* yellow-50 */
+        border: 1px solid #fde047; /* yellow-300 */
+        color: #ca8a04; /* yellow-600 */
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem; /* rounded-lg */
+        font-size: 0.875rem; /* text-sm */
+        display: flex;
+        align-items: center;
+        gap: 0.75rem; /* gap-3 */
+        margin-top: 1rem;
+    }
   </style>
  </head>
  <body class="bg-gray-50">
@@ -278,7 +328,7 @@
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
      <div class="flex items-center gap-4">
       <!-- Logotipo circular de Pizzas Love con icono de pizza y texto -->
-      <img alt="Logotipo circular de Pizzas Love" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg border-4 border-white" height="80" src="./logo2.png" width="80">
+      <img alt="Logotipo circular de Pizzas Love" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg border-4 border-white" height="80" src="https://estudioguacamaya.github.io/pizzaslove/logo2.png" width="80">
       <div>
        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
         Pizzas Love
@@ -1118,7 +1168,7 @@
       <p class="text-sm text-gray-600 mb-3D">
        1 LITRO
       </p>
-      <img alt="Botella de Agua Mineral Sin Gas" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="glup-negro.webp" width="200">
+      <img alt="Botella de Agua Mineral Sin Gas" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://estudioguacamaya.github.io/pizzaslove/glup-negro.webp" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1144,7 +1194,7 @@
       <p class="text-sm text-gray-600 mb-3">
        1 LITRO
       </p>
-      <img alt="Lata de CocaCola Light" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="glup-uva.webp" width="200">
+      <img alt="Lata de CocaCola Light" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://estudioguacamaya.github.io/pizzaslove/glup-uva.webp" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1165,12 +1215,12 @@
      <!-- Fanta Normal -->
      <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card" data-description="355 ml" data-name="Fanta Normal" data-original-price="2.20" data-price="2.20">
       <h4 class="text-lg font-semibold text-gray-900 mb-1">
-       REFRESCO MANZANA  GLUP
+       REFRESCO MANZANA ROJA GLUP
       </h4>
       <p class="text-sm text-gray-600 mb-3">
        1 LITRO
       </p>
-      <img alt="Lata de Fanta Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="glup-manzana.webp" width="200">
+      <img alt="Lata de Fanta Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://estudioguacamaya.github.io/pizzaslove/glup-manzana.webp" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1196,7 +1246,7 @@
       <p class="text-sm text-gray-600 mb-3">
        1 lITRO
       </p>
-      <img alt="Lata de Fanta Zero" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="glup-fresh.webp" width="200">
+      <img alt="Lata de Fanta Zero" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://estudioguacamaya.github.io/pizzaslove/glup-fresh.webp" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1222,7 +1272,7 @@
       <p class="text-sm text-gray-600 mb-3">
        2 LITROS
       </p>
-      <img alt="Lata de Sprite Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="cocacola.webp" width="200">
+      <img alt="Lata de Sprite Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140" src="https://estudioguacamaya.github.io/pizzaslove/cocacola.webp" width="200">
       <span class="text-xl font-bold text-gray-900 mt-auto price-display">
        $2.20
       </span>
@@ -1277,40 +1327,214 @@
       $0.00
      </span>
     </div>
-    <h3 class="text-xl font-semibold text-gray-800 mb-4">
-     Datos del Pedido
-    </h3>
-    <form class="space-y-4" id="order-form" novalidate="">
-     <div>
-      <label class="block text-sm font-medium text-gray-700" for="customer-name">
-       Nombre:
-      </label>
-      <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-name" required="" type="text">
-     </div>
-     <div>
-      <label class="block text-sm font-medium text-gray-700" for="customer-lastname">
-       Apellido:
-      </label>
-      <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-lastname" required="" type="text">
-     </div>
-     <div>
-      <label class="block text-sm font-medium text-gray-700" for="customer-address">
-       Dirección:
-      </label>
-      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-address" required="" rows="3">      </textarea>
-     </div>
-     <div>
-      <label class="block text-sm font-medium text-gray-700" for="extra-notes">
-       Notas / Ingredientes extras para el pedido general:
-      </label>
-      <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="extra-notes" rows="3">      </textarea>
-     </div>
-     <button class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition transform hover:scale-105 duration-300 ease-in-out flex items-center justify-center gap-2" id="send-whatsapp-order" type="submit">
-      <i class="fab fa-whatsapp text-xl">
-      </i>
-      Realizar Pedido por WhatsApp
-     </button>
-    </form>
+
+    <!-- ===== SECCIÓN DE CHECKOUT ===== -->
+
+    <!-- PASO 1: DATOS DEL CLIENTE -->
+    <div id="checkout-step-1">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Datos del Pedido
+        </h3>
+        <form class="space-y-4" id="order-form" novalidate="">
+            <div>
+                <label class="block text-sm font-medium text-gray-700" for="customer-name">Nombre:</label>
+                <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-name" required="" type="text">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700" for="customer-lastname">Apellido:</label>
+                <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-lastname" required="" type="text">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700" for="customer-address">Dirección:</label>
+                <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="customer-address" required="" rows="3"></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700" for="extra-notes">Notas / Ingredientes extras para el pedido general:</label>
+                <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500" id="extra-notes" rows="3"></textarea>
+            </div>
+            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 duration-300 ease-in-out flex items-center justify-center gap-2" id="continue-to-payment-btn" type="submit">
+                Continuar al Pago
+            </button>
+        </form>
+    </div>
+
+    <!-- PASO 2: SELECCIÓN DE MÉTODO DE PAGO -->
+    <div id="checkout-step-2" style="display: none;">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Información de pago
+        </h3>
+        <p class="text-sm text-gray-600 mb-6">Por favor, selecciona tu método de pago preferido.</p>
+        <div class="space-y-4">
+            <button class="payment-option-btn" id="pay-whatsapp-btn">
+                <span>Reservar por WhatsApp</span>
+                <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
+            </button>
+             <button class="payment-option-btn" id="pay-pago-movil-btn">
+                <span>Pago Móvil</span>
+                <i class="fas fa-mobile-alt text-blue-500 text-2xl"></i>
+            </button>
+            <button class="payment-option-btn" id="pay-card-btn">
+                <span>Tarjeta de Crédito/Débito</span>
+                <div class="flex items-center gap-2">
+                    <i class="fab fa-cc-visa text-blue-800 text-2xl"></i>
+                    <i class="fab fa-cc-mastercard text-red-600 text-2xl"></i>
+                </div>
+            </button>
+            <button class="payment-option-btn" id="pay-crypto-btn">
+                <span>Pagar con Criptomonedas</span>
+                <i class="fab fa-bitcoin text-yellow-500 text-2xl"></i>
+            </button>
+        </div>
+        <button class="w-full mt-6 border border-gray-400 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-100 transition" id="back-to-details-btn">
+            Anterior
+        </button>
+    </div>
+
+    <!-- PASO 3: PAGO CON CRIPTOMONEDAS -->
+    <div id="checkout-step-3-crypto" style="display: none;">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-800">Finalizar Pago con Criptomonedas</h3>
+            <button id="back-to-payment-selection-crypto-btn" class="text-gray-500 hover:text-gray-800 font-semibold">
+                <i class="fas fa-times"></i> Volver
+            </button>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg mb-4 border border-gray-200">
+            <h4 class="font-bold text-gray-800 mb-2">Resumen del Pedido</h4>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600">Monto a Pagar</span>
+                <span class="font-bold text-gray-800" id="crypto-total-display">$0.00</span>
+            </div>
+        </div>
+        <div class="text-center">
+            <h4 class="font-semibold mb-2">Escanear para Pagar (Binance Pay)</h4>
+            <!-- ===== REEMPLAZA ESTE SRC CON LA URL DE TU PROPIO CÓDIGO QR ===== -->
+            <img src="https://placehold.co/250x250/ffffff/000000?text=Tu+QR+de+Binance+Pay" alt="QR Code para pago con criptomonedas" class="mx-auto rounded-lg shadow-md">
+            <p class="text-xs text-gray-500 mt-2">Usa tu billetera para escanear</p>
+        </div>
+        <hr class="my-6">
+        <div>
+            <h4 class="font-semibold mb-3 text-center">O Pagar a la Siguiente Dirección</h4>
+            <div class="space-y-3">
+                <!-- Dirección USDT -->
+                <div class="payment-details-item">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-dollar-sign text-green-500 bg-green-100 p-2 rounded-full"></i>
+                        <div>
+                            <p class="font-bold">USDT (Tether)</p>
+                            <!-- ===== REEMPLAZA ESTA DIRECCIÓN CON LA TUYA ===== -->
+                            <p class="text-xs text-gray-500 break-all" id="usdt-address">0xabc...def123</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn" data-clipboard-target="#usdt-address" aria-label="Copiar dirección USDT"><i class="fas fa-copy"></i></button>
+                </div>
+                 <!-- Dirección BTC -->
+                <div class="payment-details-item">
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-bitcoin text-yellow-500 bg-yellow-100 p-2 rounded-full"></i>
+                        <div>
+                            <p class="font-bold">Bitcoin (BTC)</p>
+                             <!-- ===== REEMPLAZA ESTA DIRECCIÓN CON LA TUYA ===== -->
+                            <p class="text-xs text-gray-500 break-all" id="btc-address">bc1qxy...fjhx0w1h</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn" data-clipboard-target="#btc-address" aria-label="Copiar dirección Bitcoin"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="payment-proof-crypto">Cargar Comprobante de Pago (opcional)</label>
+            <input type="file" id="payment-proof-crypto" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100">
+        </div>
+        <div class="payment-reminder">
+             <i class="fas fa-exclamation-circle"></i>
+             <p><strong>Importante:</strong> Para confirmar tu pedido, no olvides adjuntar el comprobante de pago en WhatsApp.</p>
+        </div>
+        <button class="w-full mt-4 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition transform hover:scale-105 duration-300 ease-in-out flex items-center justify-center gap-2" id="crypto-payment-done-btn">
+            <i class="fab fa-whatsapp"></i> He pagado, notificar por WhatsApp
+        </button>
+    </div>
+    
+    <!-- PASO 3: PAGO MÓVIL -->
+    <div id="checkout-step-3-pago-movil" style="display: none;">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-800">Finalizar con Pago Móvil</h3>
+            <button id="back-to-payment-selection-pago-movil-btn" class="text-gray-500 hover:text-gray-800 font-semibold">
+                <i class="fas fa-times"></i> Volver
+            </button>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg mb-4 border border-gray-200">
+            <h4 class="font-bold text-gray-800 mb-2">Resumen del Pedido</h4>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-600">Monto a Pagar</span>
+                <span class="font-bold text-gray-800" id="pago-movil-total-display">$0.00</span>
+            </div>
+        </div>
+        <div class="text-center mb-6">
+            <h4 class="font-semibold mb-2">Escanear Código QR (Pago Móvil)</h4>
+             <!-- ===== REEMPLAZA ESTE SRC CON LA URL DE TU PROPIO CÓDIGO QR DE PAGO MÓVIL ===== -->
+            <img src="https://placehold.co/250x250/ffffff/000000?text=Tu+QR+de+Pago+Móvil" alt="QR Code para Pago Móvil" class="mx-auto rounded-lg shadow-md">
+        </div>
+
+        <div class="space-y-4">
+            <!-- Banco de Venezuela -->
+            <div>
+                <h4 class="font-semibold mb-2 text-gray-700 border-b pb-1">Banco de Venezuela</h4>
+                <div class="space-y-2 mt-2">
+                    <div class="payment-details-item">
+                        <span class="font-medium text-sm text-gray-600">Banco:</span>
+                        <span class="font-bold text-sm" id="pm-bdv-banco">Banco de Venezuela (0102)</span>
+                    </div>
+                    <div class="payment-details-item">
+                        <span class="font-medium text-sm text-gray-600">Cédula:</span>
+                        <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
+                        <span class="font-bold text-sm" id="pm-bdv-ci">V-99.999.999</span>
+                        <button class="copy-btn" data-clipboard-target="#pm-bdv-ci"><i class="fas fa-copy"></i> Copiar</button>
+                    </div>
+                    <div class="payment-details-item">
+                        <span class="font-medium text-sm text-gray-600">Teléfono:</span>
+                        <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
+                        <span class="font-bold text-sm" id="pm-bdv-phone">0412-0000000</span>
+                        <button class="copy-btn" data-clipboard-target="#pm-bdv-phone"><i class="fas fa-copy"></i> Copiar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Banco Mercantil -->
+             <div>
+                <h4 class="font-semibold mb-2 text-gray-700 border-b pb-1">Banco Mercantil</h4>
+                <div class="space-y-2 mt-2">
+                    <div class="payment-details-item">
+                        <span class="font-medium text-sm text-gray-600">Banco:</span>
+                        <span class="font-bold text-sm" id="pm-mercantil-banco">Banco Mercantil (0105)</span>
+                    </div>
+                    <div class="payment-details-item">
+                        <span class="font-medium text-sm text-gray-600">Cédula:</span>
+                        <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
+                        <span class="font-bold text-sm" id="pm-mercantil-ci">V-88.888.888</span>
+                        <button class="copy-btn" data-clipboard-target="#pm-mercantil-ci"><i class="fas fa-copy"></i> Copiar</button>
+                    </div>
+                    <div class="payment-details-item">
+                        <span class="font-medium text-sm text-gray-600">Teléfono:</span>
+                        <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
+                        <span class="font-bold text-sm" id="pm-mercantil-phone">0424-0000000</span>
+                        <button class="copy-btn" data-clipboard-target="#pm-mercantil-phone"><i class="fas fa-copy"></i> Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="payment-proof-pago-movil">Cargar Comprobante de Pago (opcional)</label>
+            <input type="file" id="payment-proof-pago-movil" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100">
+        </div>
+        <div class="payment-reminder">
+             <i class="fas fa-exclamation-circle"></i>
+             <p><strong>Importante:</strong> Para confirmar tu pedido, no olvides adjuntar el comprobante de pago en WhatsApp.</p>
+        </div>
+        <button class="w-full mt-4 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition transform hover:scale-105 duration-300 ease-in-out flex items-center justify-center gap-2" id="pago-movil-done-btn">
+            <i class="fab fa-whatsapp"></i> He pagado, notificar por WhatsApp
+        </button>
+    </div>
+
    </div>
   </div>
   <!-- Footer -->
@@ -1347,10 +1571,18 @@
        +58 0412 0403343
       </a>
      </div>
+     <div class="flex items-center gap-2 justify-center md:justify-start text-base">
+      <i class="fab fa-whatsapp text-green-500 text-lg">
+      </i>
+      <a class="hover:underline hover:text-green-600 transition text-gray-600 font-medium" href="https://api.whatsapp.com/send/?phone=5804243403264&text=%C2%A1Hola!%20👋%20Soy%20cliente%20de%20PizzasLove%20y%20quiero%20realizar%20un%20nuevo%20pedido%20🍕🔥%0A%0APor%20favor%2C%20ay%C3%BAdame%20a%20confirmar%20la%20disponibilidad%20y%20opciones%20para%20hoy.%0A%0A%F0%9F%86%94%20C%C3%B3digo%20de%20cliente%3A%20PZL-ORDER-2025%0A%0AEstoy%20listo%20para%20hacer%20mi%20pedido%20ahora%20mismo.%20%F0%9F%99%8C
+">
+       +58 0424 3403264
+      </a>
+     </div>
     </div>
     <!-- Columna central con logo y redes sociales -->
     <div class="flex flex-col items-center gap-6 md:mt-8 mx-auto">
-     <img alt="Logotipo de Pizzas Love en el pie de página" class="w-36 h-auto" height="40" src="./logo.png" width="120">
+     <img alt="Logotipo de Pizzas Love en el pie de página" class="w-36 h-auto" height="40" src="https://estudioguacamaya.github.io/pizzaslove/logo.png" width="120">
      <div class="flex gap-8 text-gray-700">
       
       <a aria-label="Instagram" class="hover:text-red-600 transition transform hover:scale-125" href="https://www.instagram.com/pizzasloveesjm">
@@ -1373,17 +1605,19 @@
     </iframe>
    </div>
    <p class="mt-12 text-center text-gray-500 text-sm">
-    v3.1.0
+    v3.2.0
    </p>
   </footer>
   <!-- Contenedor para las notificaciones Toast -->
-  <div id="toast-container"></div>
+  <div id="toast-container" class="fixed top-5 right-5 z-[9999] space-y-2"></div>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 
     // --- VARIABLES GLOBALES Y CONFIGURACIÓN ---
     const WHATSAPP_PHONE_NUMBER = '5804120403343';
     let cart = [];
+    let customerData = {};
 
     // --- ELEMENTOS DEL DOM ---
     const stickyNavbar = document.getElementById("sticky-navbar");
@@ -1396,35 +1630,76 @@
     const closeCartModalButton = document.getElementById("close-cart-modal");
     const cartItemsContainer = document.getElementById("cart-items-container");
     const cartTotalDisplay = document.getElementById("cart-total");
-    const orderForm = document.getElementById("order-form");
     const mainContent = document.querySelector('main');
     const categoryNav = document.querySelector('.category-btn').parentElement;
+    
+    // --- ELEMENTOS DEL NUEVO CHECKOUT ---
+    const checkoutStep1 = document.getElementById('checkout-step-1');
+    const checkoutStep2 = document.getElementById('checkout-step-2');
+    const checkoutStep3Crypto = document.getElementById('checkout-step-3-crypto');
+    const checkoutStep3PagoMovil = document.getElementById('checkout-step-3-pago-movil');
+    
+    const orderForm = document.getElementById('order-form');
+    const continueToPaymentBtn = document.getElementById('continue-to-payment-btn');
+    const backToDetailsBtn = document.getElementById('back-to-details-btn');
+    
+    // Botones de selección de pago
+    const payWhatsappBtn = document.getElementById('pay-whatsapp-btn');
+    const payPagoMovilBtn = document.getElementById('pay-pago-movil-btn');
+    const payCardBtn = document.getElementById('pay-card-btn');
+    const payCryptoBtn = document.getElementById('pay-crypto-btn');
+    
+    // Elementos de la sección Cripto
+    const backToPaymentSelectionCryptoBtn = document.getElementById('back-to-payment-selection-crypto-btn');
+    const cryptoTotalDisplay = document.getElementById('crypto-total-display');
+    const cryptoPaymentDoneBtn = document.getElementById('crypto-payment-done-btn');
+
+    // Elementos de la sección Pago Móvil
+    const backToPaymentSelectionPagoMovilBtn = document.getElementById('back-to-payment-selection-pago-movil-btn');
+    const pagoMovilTotalDisplay = document.getElementById('pago-movil-total-display');
+    const pagoMovilDoneBtn = document.getElementById('pago-movil-done-btn');
+
 
     // --- FUNCIONES DE UTILIDAD ---
 
     /**
-     * Muestra una notificación toast.
+     * Muestra una notificación toast (pop-up).
      * @param {string} message - El mensaje a mostrar.
-     * @param {string} type - 'success' o 'error'.
+     * @param {string} type - 'success' (verde), 'error' (rojo), o 'info' (azul).
      */
     function showToast(message, type = 'success') {
         const toastContainer = document.getElementById('toast-container');
-        const toast = document.createElement('div');
-        toast.classList.add('toast', type);
+        if (!toastContainer) return;
 
-        const iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
-        toast.innerHTML = `
-            <i class="fas ${iconClass} toast-icon"></i>
-            <span>${message}</span>
-        `;
+        const toast = document.createElement('div');
+        let bgColor, iconClass;
+
+        switch (type) {
+            case 'error':
+                bgColor = 'bg-red-500';
+                iconClass = 'fa-exclamation-circle';
+                break;
+            case 'info':
+                 bgColor = 'bg-blue-500';
+                 iconClass = 'fa-info-circle';
+                 break;
+            case 'success':
+            default:
+                bgColor = 'bg-green-500';
+                iconClass = 'fa-check-circle';
+                break;
+        }
+        
+        toast.className = `transform transition-all duration-300 ease-in-out max-w-sm w-full ${bgColor} text-white rounded-md shadow-lg p-4 flex items-center gap-3 translate-x-full opacity-0`;
+        toast.innerHTML = `<i class="fas ${iconClass}"></i><span>${message}</span>`;
         toastContainer.appendChild(toast);
         
-        // Trigger the animation
-        setTimeout(() => toast.classList.add('show'), 10);
-
-        // Hide and remove the toast after 3 seconds
         setTimeout(() => {
-            toast.classList.remove('show');
+            toast.classList.remove('translate-x-full', 'opacity-0');
+        }, 10);
+
+        setTimeout(() => {
+            toast.classList.add('translate-x-full', 'opacity-0');
             toast.addEventListener('transitionend', () => toast.remove());
         }, 3000);
     }
@@ -1442,15 +1717,16 @@
     }
 
     /**
-     * Actualiza el estado del local (Abierto/Cerrado).
+     * Actualiza el estado del local (Abierto/Cerrado) basado en la hora actual.
      */
     function updateStoreStatus() {
         const now = new Date();
         const hours = now.getHours();
         const statusElement = document.getElementById('store-status');
-        statusElement.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-red-500');
+        if (!statusElement) return;
+        statusElement.classList.remove('bg-green-500', 'bg-red-500');
 
-        if (hours >= 9 && hours < 23) {
+        if (hours >= 9 && hours < 23) { // Asumimos que la tienda abre de 9 AM a 11 PM
             statusElement.textContent = 'Abierto ahora';
             statusElement.classList.add('bg-green-500');
         } else {
@@ -1459,7 +1735,7 @@
         }
     }
 
-    // --- LÓGICA DEL SLIDER ---
+    // --- LÓGICA DEL SLIDER DE PROMOCIONES ---
     const sliderWrapper = document.getElementById('slider-wrapper');
     const sliderDotsContainer = document.getElementById('slider-dots');
     const sliderItems = document.querySelectorAll('.slider-item');
@@ -1467,12 +1743,17 @@
     let autoSlideInterval;
 
     function createDots() {
+        if(!sliderItems.length || !sliderDotsContainer) return;
         sliderDotsContainer.innerHTML = '';
         sliderItems.forEach((_, index) => {
             const dot = document.createElement('span');
             dot.classList.add('dot');
             if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => moveToSlide(index));
+            dot.addEventListener('click', () => {
+                moveToSlide(index);
+                stopSlider(); // Detener el slider al interactuar
+                startSlider(); // Reiniciar el temporizador
+            });
             sliderDotsContainer.appendChild(dot);
         });
     }
@@ -1484,12 +1765,15 @@
     }
 
     function moveToSlide(index) {
+        if (!sliderWrapper) return;
         currentIndex = index;
         sliderWrapper.style.transform = `translateX(${-currentIndex * 100}%)`;
         updateDots();
     }
 
     function startSlider() {
+        if(!sliderItems.length) return;
+        stopSlider(); // Asegurarse de que no haya intervalos duplicados
         autoSlideInterval = setInterval(() => {
             currentIndex = (currentIndex + 1) % sliderItems.length;
             moveToSlide(currentIndex);
@@ -1503,7 +1787,7 @@
     // --- LÓGICA DEL CARRITO ---
 
     /**
-     * Actualiza los contadores de ítems del carrito en la UI.
+     * Actualiza todos los contadores de ítems del carrito en la UI y renderiza los productos.
      */
     function updateCartUI() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -1513,25 +1797,26 @@
     }
 
     /**
-     * Renderiza los ítems del carrito en el modal.
+     * Renderiza los ítems del carrito en el modal y actualiza el total.
      */
     function renderCartItems() {
+        if (!cartItemsContainer) return;
         cartItemsContainer.innerHTML = '';
         let total = 0;
 
         if (cart.length === 0) {
-            cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center">Tu carrito está vacío.</p>';
+            cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-4">Tu carrito está vacío.</p>';
         } else {
             cart.forEach((item, index) => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
                 const itemElement = document.createElement('div');
-                itemElement.classList.add('flex', 'items-center', 'justify-between', 'py-2', 'border-b', 'border-gray-200');
+                itemElement.classList.add('flex', 'items-center', 'justify-between', 'py-3', 'border-b', 'border-gray-200');
                 itemElement.innerHTML = `
                     <div class="flex-1 pr-2">
                         <p class="font-semibold text-gray-900">${item.name}</p>
-                        ${item.notes ? `<p class="text-xs text-gray-500 italic">Notas: ${item.notes}</p>` : ''}
-                        <p class="text-sm text-gray-700">Precio: ${formatCurrency(item.price)}</p>
+                        ${item.notes ? `<p class="text-xs text-gray-500 italic mt-1">Notas: ${item.notes}</p>` : ''}
+                        <p class="text-sm text-gray-700">Precio unitario: ${formatCurrency(item.price)}</p>
                     </div>
                     <div class="flex items-center gap-2">
                         <button class="quantity-button decrease-cart-quantity text-sm w-8 h-8" data-index="${index}" aria-label="Disminuir cantidad de ${item.name}">-</button>
@@ -1545,11 +1830,14 @@
                 cartItemsContainer.appendChild(itemElement);
             });
         }
-        cartTotalDisplay.textContent = formatCurrency(total);
+        const formattedTotal = formatCurrency(total);
+        cartTotalDisplay.textContent = formattedTotal;
+        cryptoTotalDisplay.textContent = formattedTotal;
+        pagoMovilTotalDisplay.textContent = formattedTotal;
     }
 
     /**
-     * Añade un producto al carrito.
+     * Añade un producto al carrito desde su tarjeta.
      * @param {HTMLElement} productCard - El elemento de la tarjeta del producto.
      */
     function addToCart(productCard) {
@@ -1558,8 +1846,10 @@
         const quantityInput = productCard.querySelector('.quantity-input-field');
         const notesInput = productCard.querySelector('.notes-input');
         
+        if (!name || isNaN(price) || !quantityInput) return;
+
         const quantity = parseInt(quantityInput.value);
-        const notes = notesInput.value.trim();
+        const notes = notesInput ? notesInput.value.trim() : '';
 
         const existingItem = cart.find(item => item.name === name && item.notes === notes);
 
@@ -1573,20 +1863,21 @@
         
         // Resetear la tarjeta del producto
         quantityInput.value = 1;
-        notesInput.value = '';
+        if(notesInput) notesInput.value = '';
         updateProductPrice(productCard);
         
         updateCartUI();
     }
     
     /**
-     * Actualiza la cantidad de un ítem en el carrito.
+     * Actualiza la cantidad de un ítem en el carrito desde el modal.
      * @param {number} index - El índice del ítem en el array del carrito.
      * @param {number} newQuantity - La nueva cantidad.
      */
     function updateCartItemQuantity(index, newQuantity) {
         if (newQuantity < 1) {
             cart.splice(index, 1);
+            showToast('Producto eliminado del carrito.', 'info');
         } else {
             cart[index].quantity = newQuantity;
         }
@@ -1594,40 +1885,46 @@
     }
 
     /**
-     * Abre o cierra el modal del carrito.
+     * Abre o cierra el modal del carrito, reseteando a la vista inicial.
      * @param {boolean} show - true para mostrar, false para ocultar.
      */
     function toggleCartModal(show) {
         if (show) {
             renderCartItems();
+            // Siempre empezar en el paso 1 (datos del cliente) al abrir el modal
+            checkoutStep1.style.display = 'block';
+            checkoutStep2.style.display = 'none';
+            checkoutStep3Crypto.style.display = 'none';
+            checkoutStep3PagoMovil.style.display = 'none';
             cartModal.style.display = 'flex';
         } else {
             cartModal.style.display = 'none';
         }
     }
     
+    // --- LÓGICA DEL CHECKOUT MULTIPASO ---
+
     /**
-     * Valida el formulario de pedido y genera el mensaje de WhatsApp.
+     * Valida los datos del cliente y avanza al paso de selección de pago.
+     * @param {Event} event - El evento de submit del formulario.
      */
-    function handleSendOrder(event) {
+    function handleGoToPayment(event) {
         event.preventDefault();
         const requiredFields = ['customer-name', 'customer-lastname', 'customer-address'];
         let isValid = true;
         
-        // Resetear estilos de error
-        requiredFields.forEach(id => document.getElementById(id).classList.remove('form-input-error'));
-        
-        // Validar campos
         requiredFields.forEach(id => {
             const field = document.getElementById(id);
             if (!field.value.trim()) {
-                field.classList.add('form-input-error');
+                field.classList.add('border-red-500');
                 isValid = false;
+            } else {
+                field.classList.remove('border-red-500');
             }
         });
         
         if (cart.length === 0) {
-            showToast('Tu carrito está vacío.', 'error');
+            showToast('Tu carrito está vacío. Añade productos para continuar.', 'error');
             return;
         }
         
@@ -1635,61 +1932,88 @@
             showToast('Por favor, completa los campos requeridos.', 'error');
             return;
         }
-
-        const customerName = document.getElementById('customer-name').value.trim();
-        const customerLastName = document.getElementById('customer-lastname').value.trim();
-        const customerAddress = document.getElementById('customer-address').value.trim();
-        const extraNotes = document.getElementById('extra-notes').value.trim();
         
-        let orderMessage = `¡Hola! Me gustaría hacer un pedido:\n\n`;
+        // Guardar datos del cliente en la variable global
+        customerData = {
+            name: document.getElementById('customer-name').value.trim(),
+            lastname: document.getElementById('customer-lastname').value.trim(),
+            address: document.getElementById('customer-address').value.trim(),
+            notes: document.getElementById('extra-notes').value.trim()
+        };
+
+        // Cambiar a la vista de selección de pago
+        checkoutStep1.style.display = 'none';
+        checkoutStep2.style.display = 'block';
+    }
+
+    /**
+     * Genera y envía el mensaje final a WhatsApp, incluyendo detalles del pago.
+     * @param {string} paymentMethod - El método de pago seleccionado.
+     */
+    function sendWhatsAppOrder(paymentMethod) {
+        let orderMessage = `¡Hola Pizzas Love! 👋 Me gustaría hacer un nuevo pedido:\n\n`;
         let total = 0;
+        
+        orderMessage += "--- 🍕 MI PEDIDO ---\n";
         cart.forEach((item, index) => {
             const itemTotal = item.price * item.quantity;
             total += itemTotal;
-            orderMessage += `${index + 1}. ${item.name} x${item.quantity}\n`;
+            orderMessage += `${index + 1}. *${item.name}* (x${item.quantity})\n`;
             if (item.notes) {
-                orderMessage += `   (Notas: ${item.notes})\n`;
+                orderMessage += `   (Notas: _${item.notes}_)\n`;
             }
         });
 
-        orderMessage += `\nTotal: ${formatCurrency(total)}\n\n`;
-        orderMessage += `--- Datos del Cliente ---\n`;
-        orderMessage += `Nombre: ${customerName} ${customerLastName}\n`;
-        orderMessage += `Dirección: ${customerAddress}\n`;
-        if (extraNotes) orderMessage += `Notas Generales: ${extraNotes}\n`;
-        orderMessage += `\n¡Gracias!`;
+        orderMessage += `\n*Total a Pagar: ${formatCurrency(total)}*\n\n`;
+        orderMessage += `--- 👤 DATOS DE ENTREGA ---\n`;
+        orderMessage += `*Nombre:* ${customerData.name} ${customerData.lastname}\n`;
+        orderMessage += `*Dirección:* ${customerData.address}\n`;
+        if (customerData.notes) orderMessage += `*Notas Generales:* ${customerData.notes}\n`;
+        
+        orderMessage += `\n--- 💳 INFORMACIÓN DE PAGO ---\n`;
+        orderMessage += `*Método de Pago:* ${paymentMethod}\n`;
+        
+        // Verificar si se debe mencionar el comprobante
+        if (paymentMethod.includes('Pago Móvil') || paymentMethod.includes('Criptomonedas')) {
+             orderMessage += `*Estado:* El comprobante de pago se adjuntará a continuación para confirmar el pedido.\n`;
+        }
+
+        orderMessage += `\n¡Gracias! Quedo a la espera de la confirmación.`;
 
         const encodedMessage = encodeURIComponent(orderMessage);
         const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedMessage}`;
 
         window.open(whatsappUrl, '_blank');
         
-        // Limpiar después de enviar
+        // Limpiar todo después de enviar
         cart = [];
         orderForm.reset();
+        customerData = {};
         updateCartUI();
         toggleCartModal(false);
-        showToast('¡Pedido enviado a WhatsApp! Gracias.');
+        showToast('¡Redirigiendo a WhatsApp para enviar tu pedido!');
     }
 
+
     /**
-     * Actualiza el precio mostrado en una tarjeta de producto según la cantidad.
+     * Actualiza el precio mostrado en una tarjeta de producto según la cantidad seleccionada.
      */
     function updateProductPrice(productCard) {
-        const quantity = parseInt(productCard.querySelector('.quantity-input-field').value);
-        const originalPrice = parseFloat(productCard.dataset.originalPrice || productCard.dataset.price);
+        const quantityInput = productCard.querySelector('.quantity-input-field');
+        if (!quantityInput) return;
+
+        const quantity = parseInt(quantityInput.value);
         const priceDisplay = productCard.querySelector('.price-display');
         const priceWithDiscount = parseFloat(productCard.dataset.price);
 
-        // Si hay descuento, el precio base es el de oferta. Si no, es el original.
-        const basePrice = productCard.querySelector('.line-through') ? priceWithDiscount : originalPrice;
-        
-        priceDisplay.textContent = formatCurrency(basePrice * quantity);
+        if (priceDisplay && !isNaN(priceWithDiscount)) {
+            priceDisplay.textContent = formatCurrency(priceWithDiscount * quantity);
+        }
     }
 
     // --- MANEJADORES DE EVENTOS (EVENT LISTENERS) ---
 
-    // Scroll para mostrar/ocultar navbar
+    // Scroll para mostrar/ocultar la barra de navegación fija y botones flotantes
     window.onscroll = function() {
         const show = window.pageYOffset > 200;
         stickyNavbar.classList.toggle("show-on-scroll", show);
@@ -1698,10 +2022,11 @@
         floatingButtons.classList.toggle("hidden-on-scroll", !show);
     };
 
-    // Delegación de eventos para interacciones principales
+    // Delegación de eventos para interacciones principales en la página de productos
     mainContent.addEventListener('click', (event) => {
         const target = event.target;
         const productCard = target.closest('.product-card');
+        if (!productCard) return;
 
         if (target.closest('.add-to-cart-btn')) {
             addToCart(productCard);
@@ -1720,10 +2045,12 @@
         }
     });
 
-    mainContent.addEventListener('change', (event) => {
+    mainContent.addEventListener('input', (event) => {
         if (event.target.classList.contains('quantity-input-field')) {
             const productCard = event.target.closest('.product-card');
-            if(parseInt(event.target.value) < 1) event.target.value = 1;
+            if(parseInt(event.target.value) < 1 || isNaN(parseInt(event.target.value))) {
+                event.target.value = 1;
+            }
             updateProductPrice(productCard);
         }
     });
@@ -1731,16 +2058,19 @@
     // Delegación de eventos para el modal del carrito
     cartItemsContainer.addEventListener('click', (event) => {
         const target = event.target;
-        const index = parseInt(target.closest('[data-index]')?.dataset.index);
-
+        const button = target.closest('[data-index]');
+        if (!button) return;
+        
+        const index = parseInt(button.dataset.index);
         if (isNaN(index)) return;
 
-        if (target.closest('.increase-cart-quantity')) {
+        if (button.classList.contains('increase-cart-quantity')) {
             updateCartItemQuantity(index, cart[index].quantity + 1);
-        } else if (target.closest('.decrease-cart-quantity')) {
+        } else if (button.classList.contains('decrease-cart-quantity')) {
             updateCartItemQuantity(index, cart[index].quantity - 1);
-        } else if (target.closest('.remove-from-cart-btn')) {
+        } else if (button.classList.contains('remove-from-cart-btn')) {
             cart.splice(index, 1);
+            showToast('Producto eliminado del carrito.', 'info');
             updateCartUI();
         }
     });
@@ -1749,12 +2079,15 @@
         if (event.target.classList.contains('cart-quantity-input')) {
             const index = parseInt(event.target.dataset.index);
             let newQuantity = parseInt(event.target.value);
-            if (isNaN(newQuantity) || newQuantity < 1) newQuantity = 1;
+            if (isNaN(newQuantity) || newQuantity < 1) {
+                newQuantity = 1;
+                event.target.value = 1;
+            }
             updateCartItemQuantity(index, newQuantity);
         }
     });
 
-    // Eventos para abrir/cerrar el modal
+    // Eventos para abrir/cerrar el modal del carrito
     mainCartButton.addEventListener('click', () => toggleCartModal(true));
     navCartButton.addEventListener('click', () => toggleCartModal(true));
     closeCartModalButton.addEventListener('click', () => toggleCartModal(false));
@@ -1762,10 +2095,57 @@
         if (event.target === cartModal) toggleCartModal(false);
     });
 
-    // Enviar pedido
-    orderForm.addEventListener('submit', handleSendOrder);
+    // --- EVENTOS DEL NUEVO FLUJO DE CHECKOUT ---
+    orderForm.addEventListener('submit', handleGoToPayment);
 
-    // Navegación por categorías
+    backToDetailsBtn.addEventListener('click', () => {
+        checkoutStep2.style.display = 'none';
+        checkoutStep1.style.display = 'block';
+    });
+
+    // Botones de acción para cada método de pago
+    payWhatsappBtn.addEventListener('click', () => sendWhatsAppOrder('Reservar por WhatsApp'));
+    payCardBtn.addEventListener('click', () => showToast('Esta opción de pago no está disponible actualmente.', 'info'));
+    
+    payPagoMovilBtn.addEventListener('click', () => {
+        checkoutStep2.style.display = 'none';
+        checkoutStep3PagoMovil.style.display = 'block';
+    });
+
+    payCryptoBtn.addEventListener('click', () => {
+        checkoutStep2.style.display = 'none';
+        checkoutStep3Crypto.style.display = 'block';
+    });
+    
+    // Botones para "volver" en las secciones de pago
+    backToPaymentSelectionCryptoBtn.addEventListener('click', () => {
+        checkoutStep3Crypto.style.display = 'none';
+        checkoutStep2.style.display = 'block';
+    });
+    backToPaymentSelectionPagoMovilBtn.addEventListener('click', () => {
+        checkoutStep3PagoMovil.style.display = 'none';
+        checkoutStep2.style.display = 'block';
+    });
+
+    // Botones para finalizar el pedido y notificar por WhatsApp
+    cryptoPaymentDoneBtn.addEventListener('click', () => sendWhatsAppOrder('Pago con Criptomonedas'));
+    pagoMovilDoneBtn.addEventListener('click', () => sendWhatsAppOrder('Pago Móvil'));
+
+
+    // Funcionalidad para copiar datos al portapapeles
+    document.querySelectorAll('.copy-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const targetSelector = button.dataset.clipboardTarget;
+            const textToCopy = document.querySelector(targetSelector).innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast('¡Copiado al portapapeles!');
+            }, (err) => {
+                showToast('Error al copiar. Por favor, hazlo manualmente.', 'error');
+            });
+        });
+    });
+
+    // Navegación por categorías con scroll suave
     categoryNav.addEventListener('click', (event) => {
         const button = event.target.closest('.category-btn');
         if (!button) return;
@@ -1780,7 +2160,7 @@
 
             window.scrollTo({ top: adjustedOffset, behavior: 'smooth' });
 
-            // Actualizar estilo de pestaña activa
+            // Actualizar el estilo de la pestaña activa
             document.querySelectorAll('.category-btn').forEach(btn => {
                 btn.classList.remove('text-yellow-500', 'border-yellow-500');
                 btn.classList.add('hover:text-red-600', 'border-transparent', 'hover:border-red-600');
@@ -1790,13 +2170,16 @@
         }
     });
 
-    // --- INICIALIZACIÓN ---
+    // --- INICIALIZACIÓN DE LA PÁGINA ---
+    // Se ejecuta una vez que el DOM está completamente cargado.
     createDots();
     startSlider();
-    sliderWrapper.addEventListener('mouseenter', stopSlider);
-    sliderWrapper.addEventListener('mouseleave', startSlider);
+    if(sliderWrapper){
+        sliderWrapper.addEventListener('mouseenter', stopSlider);
+        sliderWrapper.addEventListener('mouseleave', startSlider);
+    }
     updateStoreStatus();
-    setInterval(updateStoreStatus, 60000); // Actualiza cada minuto
+    setInterval(updateStoreStatus, 60000); // Actualiza el estado de la tienda cada minuto.
 });
 </script>
  
