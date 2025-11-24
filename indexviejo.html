@@ -11,7 +11,8 @@
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Usando la fuente Inter para un aspecto moderno y limpio -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
     <style>
         /* Estilos personalizados para un mejor control visual */
         body {
@@ -118,12 +119,13 @@
         /* Ajustamos para que en móvil el header fluya naturalmente con el overlap */
         @media (max-width: 639px) {
             .header-overlap-container {
-                margin-top: -3rem; /* Overlap negativo para subir la tarjeta */
+                margin-top: -3rem;
+                /* Overlap negativo para subir la tarjeta */
                 position: relative;
                 z-index: 20;
             }
         }
-        
+
         /* Modal y Checkout Styles (Conservados) */
         .modal {
             display: none;
@@ -156,8 +158,15 @@
         }
 
         @keyframes animatetop {
-            from { top: -300px; opacity: 0 }
-            to { top: 0; opacity: 1 }
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
         }
 
         .close-button {
@@ -281,12 +290,14 @@
         /* --- ESTILOS ESPECÍFICOS DEL MODAL DE PIZZAS (Añadido Refactorizado) --- */
         #personalizacion-modal .modal-content {
             padding: 0;
-            overflow: hidden; /* Importante para el layout sticky del header/footer */
+            overflow: hidden;
+            /* Importante para el layout sticky del header/footer */
             display: flex;
             flex-direction: column;
-            max-height: 90vh; /* Límite de altura */
+            max-height: 90vh;
+            /* Límite de altura */
         }
-        
+
         #personalizacion-modal .modal-body {
             overflow-y: auto;
             flex: 1;
@@ -297,7 +308,7 @@
             border-top: 1px solid #e5e7eb;
             padding: 1rem;
             background-color: white;
-            box-shadow: 0 -4px 6px -1px rgba(0,0,0,0.05);
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
             z-index: 10;
         }
 
@@ -344,7 +355,7 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
+
         .ingredient-label:hover {
             background-color: #f9fafb;
         }
@@ -370,26 +381,25 @@
     <header class="relative w-full">
         <!-- Contenedor de Imagen de Fondo -->
         <div class="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] overflow-hidden">
-            <img alt="Fondo de hamburguesas"
-                class="w-full h-full object-cover"
-                src="https://storage.googleapis.com/a1aa/image/51eaa911-562d-4bc6-d0cf-d859d97d1590.jpg">
+            <img alt="Fondo de hamburguesas" class="w-full h-full object-cover" src="./assets/img/banner-2.png">
             <!-- Overlay oscuro -->
             <div class="absolute inset-0 bg-black/30"></div>
         </div>
 
         <!-- Contenedor de la Tarjeta de Información (Overlap) -->
         <!-- En móvil: Margen negativo para subir, bordes redondeados exagerados arriba. En Desktop: Absolute bottom -->
-        <div class="relative -mt-12 sm:-mt-0 sm:absolute sm:bottom-0 sm:left-0 sm:right-0 z-10 max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-            
+        <div
+            class="relative -mt-12 sm:-mt-0 sm:absolute sm:bottom-0 sm:left-0 sm:right-0 z-10 max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+
             <div class="bg-white rounded-t-[2.5rem] sm:rounded-3xl shadow-2xl sm:shadow-xl p-6 sm:p-8 relative">
-                
+
                 <!-- === VERSION MOBILE (Diseño Roof Burger) === -->
                 <div class="block sm:hidden">
                     <!-- Logo Flotante (Posición absoluta relativa a la tarjeta) -->
                     <div class="absolute -top-10 left-6">
-                        <img alt="Pizzas Love Logo" 
-                             class="w-20 h-20 rounded-full border-4 border-white shadow-lg bg-white" 
-                             src="https://estudioguacamaya.github.io/pizzaslove/logo2.png">
+                        <img alt="Pizzas Love Logo"
+                            class="w-20 h-20 rounded-full border-4 border-white shadow-lg bg-white"
+                            src="https://estudioguacamaya.github.io/pizzaslove/assets/img/logo2.png">
                     </div>
 
                     <!-- Cabecera de la Tarjeta (Título e Iconos) -->
@@ -415,7 +425,7 @@
                     <!-- Sección Puntos/Gamification -->
                     <div class="flex items-center gap-2 mb-6 text-sm text-gray-700 font-medium">
                         <div class="bg-yellow-100 p-1 rounded-md text-yellow-600">
-                             <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                         <span>Regístrate y obtén <span class="font-bold text-gray-900">Puntos Love</span></span>
                     </div>
@@ -423,18 +433,21 @@
                     <!-- Grid de Botones de Acción -->
                     <div class="flex gap-3 mb-4">
                         <!-- Botón Delivery (Rojo) -->
-                        <button class="flex-1 bg-red-600 text-white rounded-full py-2.5 px-4 flex items-center justify-center gap-2 font-bold shadow-md hover:bg-red-700 transition">
+                        <button
+                            class="flex-1 bg-red-600 text-white rounded-full py-2.5 px-4 flex items-center justify-center gap-2 font-bold shadow-md hover:bg-red-700 transition">
                             <i class="fas fa-motorcycle"></i>
                             <span>Delivery</span>
                         </button>
-                        
+
                         <!-- Botón Tienda (Icono) -->
-                        <a href="https://maps.app.goo.gl/UZD7aPgaLW9ne2DF7" target="_blank" class="w-12 h-11 bg-gray-100 text-red-600 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200 transition text-lg">
+                        <a href="https://maps.app.goo.gl/UZD7aPgaLW9ne2DF7" target="_blank"
+                            class="w-12 h-11 bg-gray-100 text-red-600 rounded-lg flex items-center justify-center shadow-sm hover:bg-gray-200 transition text-lg">
                             <i class="fas fa-store"></i>
                         </a>
 
                         <!-- Botón Tiempo (Rojo con dropdown) -->
-                        <button class="flex-1 bg-red-600 text-white rounded-full py-2.5 px-3 flex items-center justify-center gap-2 font-bold shadow-md text-sm hover:bg-red-700 transition">
+                        <button
+                            class="flex-1 bg-red-600 text-white rounded-full py-2.5 px-3 flex items-center justify-center gap-2 font-bold shadow-md text-sm hover:bg-red-700 transition">
                             <i class="far fa-clock"></i>
                             <span>Hoy 18:26</span>
                             <i class="fas fa-chevron-down text-xs ml-1"></i>
@@ -442,7 +455,8 @@
                     </div>
 
                     <!-- Botón Dirección (Ancho completo) -->
-                    <button class="w-full bg-red-700 text-white p-3.5 rounded-full flex items-center justify-between font-bold shadow-lg hover:bg-red-800 transition">
+                    <button
+                        class="w-full bg-red-700 text-white p-3.5 rounded-full flex items-center justify-between font-bold shadow-lg hover:bg-red-800 transition">
                         <div class="flex items-center gap-2 ml-2">
                             <i class="fas fa-map-marker-alt text-lg"></i>
                             <span>Ingresa tu Dirección</span>
@@ -455,7 +469,9 @@
                 <div class="hidden sm:block">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                         <div class="flex items-center gap-4">
-                            <img alt="Logotipo circular de Pizzas Love" class="w-20 h-20 rounded-full shadow-lg border-4 border-white" src="https://estudioguacamaya.github.io/pizzaslove/logo2.png">
+                            <img alt="Logotipo circular de Pizzas Love"
+                                class="w-20 h-20 rounded-full shadow-lg border-4 border-white"
+                                src="https://estudioguacamaya.github.io/pizzaslove/assets/img/logo2.png">
                             <div>
                                 <h1 class="text-3xl font-bold text-gray-900">Pizzas Love</h1>
                                 <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-600 mt-1">
@@ -467,21 +483,26 @@
                                         <i class="fas fa-map-marker-alt text-red-500"></i>
                                         <span>San Juan de los Morros</span>
                                     </div>
-                                    <span id="store-status" class="px-3 py-1 rounded-full text-white text-xs font-semibold bg-green-500">Abierto ahora</span>
+                                    <span id="store-status"
+                                        class="px-3 py-1 rounded-full text-white text-xs font-semibold bg-green-500">Abierto
+                                        ahora</span>
                                 </div>
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row items-end sm:items-center gap-4 mt-4 sm:mt-0">
                             <div class="flex items-center gap-4 text-sm text-gray-600">
-                                <button class="flex items-center gap-1 border border-red-500 text-red-500 rounded-full px-4 py-2 hover:bg-red-500 hover:text-white transition transform hover:scale-105 duration-300 ease-in-out shadow-md">
+                                <button
+                                    class="flex items-center gap-1 border border-red-500 text-red-500 rounded-full px-4 py-2 hover:bg-red-500 hover:text-white transition transform hover:scale-105 duration-300 ease-in-out shadow-md">
                                     <i class="fas fa-bolt"></i> Oferta
                                 </button>
-                                <button class="flex items-center gap-1 border border-red-500 text-red-500 rounded-full px-4 py-2 hover:bg-red-500 hover:text-white transition transform hover:scale-105 duration-300 ease-in-out shadow-md">
+                                <button
+                                    class="flex items-center gap-1 border border-red-500 text-red-500 rounded-full px-4 py-2 hover:bg-red-500 hover:text-white transition transform hover:scale-105 duration-300 ease-in-out shadow-md">
                                     <i class="fas fa-heart"></i> Favorito
                                 </button>
                             </div>
                             <div class="relative inline-block text-left">
-                                <a class="inline-flex justify-center w-full rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 transition" href="https://maps.app.goo.gl/UZD7aPgaLW9ne2DF7" target="_blank">
+                                <a class="inline-flex justify-center w-full rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-100 transition"
+                                    href="https://maps.app.goo.gl/UZD7aPgaLW9ne2DF7" target="_blank">
                                     Retirar en el Local (Pick Up)
                                 </a>
                             </div>
@@ -503,7 +524,7 @@
         class="fixed top-0 left-0 right-0 bg-white shadow-md p-4 flex items-center justify-between z-50 show-on-scroll">
         <div class="flex items-center gap-4 ml-4">
             <img alt="Logotipo circular de Pizzas Love en la barra de navegación" class="w-10 h-10 rounded-full"
-                height="40" src="https://estudioguacamaya.github.io/pizzaslove/logo2.png" width="40">
+                height="40" src="https://estudioguacamaya.github.io/pizzaslove/assets/img/logo2.png" width="40">
             <span class="text-lg font-bold text-gray-900">
                 Pizzas Love
             </span>
@@ -526,25 +547,26 @@
             </h2>
             <div class="slider-container">
                 <div class="slider-wrapper" id="slider-wrapper" style="transform: translateX(-200%);">
-                    <div class="slider-item" style="background-image: url('./banner-navidad-1.png');">
+                    <div class="slider-item"
+                        style="background-image: url('https://estudioguacamaya.github.io/pizzaslove/assets/img/banner-navidad.png');">
                         <p class="text-3xl sm:text-4xl">
                             ¡Navidad Pizzas Love!
                         </p>
                     </div>
                     <div class="slider-item"
-                        style="background-image: url('https://img.freepik.com/premium-vector/new-website-construction-page-illustration_1135235-2273.jpg?semt=ais_hybrid&w=740&q=80');">
+                        style="background-image: url('https://estudioguacamaya.github.io/pizzaslove/assets/img/banner-minimal.png');">
                         <p class="text-3xl sm:text-4xl">
                             Detalle Especial en esta navidad
                         </p>
                     </div>
                     <div class="slider-item"
-                        style="background-image: url('https://img.freepik.com/premium-vector/new-website-construction-page-illustration_1135235-2273.jpg?semt=ais_hybrid&w=740&q=80');">
+                        style="background-image: url('https://estudioguacamaya.github.io/pizzaslove/assets/img/banner-envios.png');">
                         <p class="text-3xl sm:text-4xl">
                             ¡Envío Gratis!
                         </p>
                     </div>
                     <div class="slider-item"
-                        style="background-image: url('https://img.freepik.com/premium-vector/new-website-construction-page-illustration_1135235-2273.jpg?semt=ais_hybrid&w=740&q=80');">
+                        style="background-image: url('https://estudioguacamaya.github.io/pizzaslove/assets/img/banner-familiar.png');">
                         <p class="text-3xl sm:text-4xl">
                             Combo Familiar - ¡Ahorra!
                         </p>
@@ -595,14 +617,15 @@
                 </button>
             </nav>
         </section>
-        
+
         <!-- Sección PIZZAS (Dynamic Content) -->
         <section class="mt-10" id="pizzas">
             <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
                 PIZZAS
             </h3>
             <!-- El contenido será renderizado por JavaScript -->
-            <div id="pizzas-container-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <div id="pizzas-container-grid"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 <!-- Fallback de carga -->
                 <p class="col-span-full text-center py-10 text-gray-500">Cargando menú de pizzas...</p>
             </div>
@@ -626,8 +649,7 @@
                     </p>
                     <img alt="Basic Burger con papas fritas en un plato blanco"
                         class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140"
-                        src="https://png.pngtree.com/png-vector/20241123/ourmid/pngtree-loaded-hot-dog-with-savory-toppings-png-image_14549006.png"
-                        width="200">
+                        src="https://estudioguacamaya.github.io/pizzaslove/assets/img/perro-caliente.png" width="200">
                     <div class="flex items-center gap-2 mt-auto">
                         <span class="text-xl font-bold text-gray-900 price-display">
                             $8.99
@@ -667,7 +689,7 @@
                     </p>
                     <img alt="Deluxe Burger con papas fritas en un plato blanco"
                         class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140"
-                        src="https://png.pngtree.com/png-vector/20240715/ourmid/pngtree-hamburger-png-image_13094305.png"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn0u9WJNd3CaOr_fM1n_9diS1O-EDgZK9Oyw&s"
                         width="200">
                     <div class="flex items-center gap-2 mt-auto">
                         <span class="text-xl font-bold text-gray-900 price-display">
@@ -839,8 +861,7 @@
                     </p>
                     <img alt="Camarones apanados con salsa para mojar en un plato blanco"
                         class="rounded-lg w-full h-36 object-cover mb-4 shadow-sm" height="140"
-                        src="https://png.pngtree.com/png-vector/20240808/ourmid/pngtree-the-ultimate-guide-to-perfect-lasagna-layers-of-deliciousness-tasty-recipes-png-image_13413691.png"
-                        width="200">
+                        src="https://estudioguacamaya.github.io/pizzaslove/assets/img/lasagna.png" width="200">
                     <div class="flex items-center gap-2 mt-auto">
                         <span class="text-xl font-bold text-gray-900 price-display">
                             $6.99
@@ -1148,8 +1169,7 @@
                     data-name="Churros con Manjar y chocolate" data-original-price="4.99" data-price="3.99">
                     <img alt="Churros con manjar y chocolate en un plato blanco"
                         class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100"
-                        src="https://triomcbo.com/wp-content/uploads/2021/09/B968-Porcion-de-Quesillo-Bandeja-200g.jpg"
-                        width="120">
+                        src="./quesillo.jpeg" width="120">
                     <div class="flex flex-col justify-between flex-grow">
                         <div>
                             <h4 class="text-lg font-semibold text-gray-900 mb-1">
@@ -1193,8 +1213,7 @@
                     data-name="Churros con azúcar flor" data-original-price="4.99" data-price="3.99">
                     <img alt="Churros con azúcar glas en un plato blanco"
                         class="rounded-lg w-32 h-28 object-cover flex-shrink-0 shadow-sm" height="100"
-                        src="https://apuntodeli.com/cdn/shop/products/PhotoRoom_20220605_33652p.m._1445x.png?v=1654464722"
-                        width="120">
+                        src="https://estudioguacamaya.github.io/pizzaslove/assets/img/choco-flan.png" width="120">
                     <div class="flex flex-col justify-between flex-grow">
                         <div>
                             <h4 class="text-lg font-semibold text-gray-900 mb-1">
@@ -1253,7 +1272,7 @@
                     </p>
                     <img alt="Botella de Agua Mineral Sin Gas"
                         class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm" height="140"
-                        src="https://estudioguacamaya.github.io/pizzaslove/glup-negro.webp" width="200">
+                        src="https://estudioguacamaya.github.io/pizzaslove/assets/img/glup-negro.webp" width="200">
                     <span class="text-xl font-bold text-gray-900 mt-auto price-display">
                         $2.20
                     </span>
@@ -1283,7 +1302,8 @@
                         1 LITRO
                     </p>
                     <img alt="Lata de CocaCola Light" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm"
-                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/glup-uva.webp" width="200">
+                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/assets/img/glup-uva.webp"
+                        width="200">
                     <span class="text-xl font-bold text-gray-900 mt-auto price-display">
                         $2.20
                     </span>
@@ -1313,7 +1333,8 @@
                         1 LITRO
                     </p>
                     <img alt="Lata de Fanta Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm"
-                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/glup-manzana.webp" width="200">
+                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/assets/img/glup-manzana.webp"
+                        width="200">
                     <span class="text-xl font-bold text-gray-900 mt-auto price-display">
                         $2.20
                     </span>
@@ -1343,7 +1364,8 @@
                         1 lITRO
                     </p>
                     <img alt="Lata de Fanta Zero" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm"
-                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/glup-fresh.webp" width="200">
+                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/assets/img/glup-fresh.webp"
+                        width="200">
                     <span class="text-xl font-bold text-gray-900 mt-auto price-display">
                         $2.20
                     </span>
@@ -1373,7 +1395,8 @@
                         2 LITROS
                     </p>
                     <img alt="Lata de Sprite Normal" class="rounded-lg w-full h-36 object-contain mb-4 shadow-sm"
-                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/cocacola.webp" width="200">
+                        height="140" src="https://estudioguacamaya.github.io/pizzaslove/assets/img/cocacola.webp"
+                        width="200">
                     <span class="text-xl font-bold text-gray-900 mt-auto price-display">
                         $2.20
                     </span>
@@ -1528,8 +1551,8 @@
                 <div class="text-center">
                     <h4 class="font-semibold mb-2">Escanear para Pagar (Binance Pay)</h4>
                     <!-- ===== REEMPLAZA ESTE SRC CON LA URL DE TU PROPIO CÓDIGO QR ===== -->
-                    <img src="./binance-pay-arm.jpg" alt="QR Code para pago con criptomonedas"
-                        class="mx-auto rounded-lg shadow-md">
+                    <img src="https://estudioguacamaya.github.io/pizzaslove/assets/img/binance-pay-arm.jpg"
+                        alt="QR Code para pago con criptomonedas" class="mx-auto rounded-lg shadow-md">
                     <p class="text-xs text-gray-500 mt-2">Usa tu billetera para escanear</p>
                 </div>
                 <hr class="my-6">
@@ -1541,9 +1564,9 @@
                             <div class="flex items-center gap-3">
                                 <i class="fas fa-dollar-sign text-green-500 bg-green-100 p-2 rounded-full"></i>
                                 <div>
-                                    <p class="font-bold">USDT (Tether)</p>
+                                    <p class="font-bold">USDT (BinancePay)</p>
                                     <!-- ===== REEMPLAZA ESTA DIRECCIÓN CON LA TUYA ===== -->
-                                    <p class="text-xs text-gray-500 break-all" id="usdt-address">0xabc...def123</p>
+                                    <p class="text-xs text-gray-500 break-all" id="usdt-address">978 346 663</p>
                                 </div>
                             </div>
                             <button class="copy-btn" data-clipboard-target="#usdt-address"
@@ -1554,7 +1577,7 @@
                             <div class="flex items-center gap-3">
                                 <i class="fas fa-dollar-sign text-green-500 bg-green-100 p-2 rounded-full"></i>
                                 <div>
-                                    <p class="font-bold">USDC (Us Dollar Circle)</p>
+                                    <p class="font-bold">USDT (Tether- BEP20)</p>
                                     <!-- ===== REEMPLAZA ESTA DIRECCIÓN CON LA TUYA ===== -->
                                     <p class="text-xs text-gray-500 break-all" id="usdt-address">0xabc...def123</p>
                                 </div>
@@ -1565,9 +1588,9 @@
                         <!-- Dirección BTC -->
                         <div class="payment-details-item">
                             <div class="flex items-center gap-3">
-                                <i class="fab fa-bitcoin text-yellow-500 bg-yellow-100 p-2 rounded-full"></i>
+                                <i class="fas fa-dollar-sign text-green-500 bg-green-100 p-2 rounded-full"></i>
                                 <div>
-                                    <p class="font-bold">Bitcoin (BTC)</p>
+                                    <p class="font-bold">USDC (USD CIRCLE- BEP20)</p>
                                     <!-- ===== REEMPLAZA ESTA DIRECCIÓN CON LA TUYA ===== -->
                                     <p class="text-xs text-gray-500 break-all" id="btc-address">bc1qxy...fjhx0w1h</p>
                                 </div>
@@ -1614,7 +1637,7 @@
                 <div class="text-center mb-6">
                     <h4 class="font-semibold mb-2">Escanear Código QR (Pago Móvil)</h4>
                     <!-- ===== REEMPLAZA ESTE SRC CON LA URL DE TU PROPIO CÓDIGO QR DE PAGO MÓVIL ===== -->
-                    <img src="https://placehold.co/250x250/ffffff/000000?text=Tu+QR+de+Pago+Móvil"
+                    <img src="https://estudioguacamaya.github.io/pizzaslove/assets/img/binance-pay-arm.jpg"
                         alt="QR Code para Pago Móvil" class="mx-auto rounded-lg shadow-md">
                 </div>
 
@@ -1630,14 +1653,14 @@
                             <div class="payment-details-item">
                                 <span class="font-medium text-sm text-gray-600">Cédula:</span>
                                 <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
-                                <span class="font-bold text-sm" id="pm-bdv-ci">V-99.999.999</span>
+                                <span class="font-bold text-sm" id="pm-bdv-ci">V-13.732.732</span>
                                 <button class="copy-btn" data-clipboard-target="#pm-bdv-ci"><i class="fas fa-copy"></i>
                                     Copiar</button>
                             </div>
                             <div class="payment-details-item">
                                 <span class="font-medium text-sm text-gray-600">Teléfono:</span>
                                 <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
-                                <span class="font-bold text-sm" id="pm-bdv-phone">0412-0000000</span>
+                                <span class="font-bold text-sm" id="pm-bdv-phone">0412-0403343</span>
                                 <button class="copy-btn" data-clipboard-target="#pm-bdv-phone"><i
                                         class="fas fa-copy"></i> Copiar</button>
                             </div>
@@ -1654,14 +1677,14 @@
                             <div class="payment-details-item">
                                 <span class="font-medium text-sm text-gray-600">Cédula:</span>
                                 <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
-                                <span class="font-bold text-sm" id="pm-mercantil-ci">V-88.888.888</span>
+                                <span class="font-bold text-sm" id="pm-mercantil-ci">V-13.732.732</span>
                                 <button class="copy-btn" data-clipboard-target="#pm-mercantil-ci"><i
                                         class="fas fa-copy"></i> Copiar</button>
                             </div>
                             <div class="payment-details-item">
                                 <span class="font-medium text-sm text-gray-600">Teléfono:</span>
                                 <!-- ===== REEMPLAZA ESTOS DATOS CON LOS TUYOS ===== -->
-                                <span class="font-bold text-sm" id="pm-mercantil-phone">0424-0000000</span>
+                                <span class="font-bold text-sm" id="pm-mercantil-phone">0412-0403343</span>
                                 <button class="copy-btn" data-clipboard-target="#pm-mercantil-phone"><i
                                         class="fas fa-copy"></i> Copiar</button>
                             </div>
@@ -1689,7 +1712,7 @@
 
         </div>
     </div>
-    
+
     <!-- Modal Personalización Pizza (Inyectado) -->
     <div class="modal" id="personalizacion-modal">
         <div class="modal-content w-full max-w-2xl mx-4 rounded-xl shadow-2xl bg-white overflow-hidden">
@@ -1703,7 +1726,7 @@
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
-            
+
             <!-- Body -->
             <div class="modal-body p-6 overflow-y-auto max-h-[60vh]">
                 <!-- Tamaños -->
@@ -1742,25 +1765,32 @@
                 <!-- Notas -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Notas especiales</label>
-                    <textarea id="modal-pizza-notes" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:border-red-500 focus:ring-red-500" rows="2" placeholder="Ej: Sin cebolla, bien cocida..."></textarea>
+                    <textarea id="modal-pizza-notes"
+                        class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:border-red-500 focus:ring-red-500"
+                        rows="2" placeholder="Ej: Sin cebolla, bien cocida..."></textarea>
                 </div>
             </div>
 
             <!-- Footer -->
-            <div class="modal-footer p-4 border-t border-gray-100 bg-gray-50 flex items-center justify-between gap-4 sticky bottom-0 z-10">
+            <div
+                class="modal-footer p-4 border-t border-gray-100 bg-gray-50 flex items-center justify-between gap-4 sticky bottom-0 z-10">
                 <div class="flex items-center bg-white border border-gray-300 rounded-lg">
-                    <button class="px-3 py-2 text-gray-600 hover:text-red-600 font-bold text-lg" id="modal-decrease-qty">-</button>
+                    <button class="px-3 py-2 text-gray-600 hover:text-red-600 font-bold text-lg"
+                        id="modal-decrease-qty">-</button>
                     <span class="px-3 font-semibold text-gray-900" id="modal-qty">1</span>
-                    <button class="px-3 py-2 text-gray-600 hover:text-red-600 font-bold text-lg" id="modal-increase-qty">+</button>
+                    <button class="px-3 py-2 text-gray-600 hover:text-red-600 font-bold text-lg"
+                        id="modal-increase-qty">+</button>
                 </div>
-                <button class="flex-1 bg-red-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-red-700 transition flex justify-between px-6 items-center" id="modal-add-to-cart-btn">
+                <button
+                    class="flex-1 bg-red-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-red-700 transition flex justify-between px-6 items-center"
+                    id="modal-add-to-cart-btn">
                     <span>Agregar al pedido</span>
                     <span id="modal-total-price">$0.00</span>
                 </button>
             </div>
         </div>
     </div>
-    
+
     <!-- Footer -->
     <footer
         class="mt-16 border-t border-gray-200 pt-8 pb-12 text-sm text-gray-600 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1811,7 +1841,7 @@
             <!-- Columna central con logo y redes sociales -->
             <div class="flex flex-col items-center gap-6 md:mt-8 mx-auto">
                 <img alt="Logotipo de Pizzas Love en el pie de página" class="w-36 h-auto" height="40"
-                    src="https://estudioguacamaya.github.io/pizzaslove/logo.png" width="120">
+                    src="https://estudioguacamaya.github.io/pizzaslove/assets/img/logo.png" width="120">
                 <div class="flex gap-8 text-gray-700">
 
                     <a aria-label="Instagram" class="hover:text-red-600 transition transform hover:scale-125"
@@ -2044,7 +2074,7 @@
                     cart.forEach((item, index) => {
                         const itemTotal = item.price * item.quantity;
                         total += itemTotal;
-                        
+
                         // Generar texto para mostrar detalles de personalización
                         let detailsHtml = '';
                         if (item.isCustomPizza) {
@@ -2204,7 +2234,7 @@
                 cart.forEach((item, index) => {
                     const itemTotal = item.price * item.quantity;
                     total += itemTotal;
-                    
+
                     // Formato diferente si es pizza personalizada
                     if (item.isCustomPizza) {
                         orderMessage += `${index + 1}. *${item.name}* (x${item.quantity})\n`;
@@ -2428,7 +2458,7 @@
             });
 
             // --- LÓGICA DE PERSONALIZACIÓN DE PIZZAS (NUEVO) ---
-            
+
             // Datos del menú de pizzas
             const menuData = {
                 extras: {
@@ -2463,35 +2493,35 @@
                         id: 'basica',
                         name: 'Pizza Básica',
                         description: 'Base + Salsa + Queso + 1 Vegetal + 2 Charcuteros',
-                        image: 'https://static.vecteezy.com/system/resources/previews/050/704/900/non_2x/pepperoni-pizza-isolated-on-transparent-background-png.png',
+                        image: 'https://estudioguacamaya.github.io/pizzaslove/assets/img/pizza-basica.png',
                         prices: { small: 5.00, large: 9.00, family: 11.00 }
                     },
                     {
                         id: 'vegetariana',
                         name: 'Pizza Vegetariana',
                         description: 'Base + Salsa + Queso + 4 Vegetales a elección',
-                        image: 'https://www.saborusa.com/wp-content/uploads/2019/10/Animate-a-disfrutar-una-deliciosa-pizza-de-salchicha-Foto-destacada.png',
+                        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp3ZTgv3G7gPMMPWKUSjteV4gSJLqM-FL14A&s',
                         prices: { small: 5.00, large: 9.00, family: 13.00 }
                     },
                     {
                         id: 'lovee',
                         name: 'Pizza Lovee',
                         description: 'Base + Salsa + Queso + 2 Vegetales + 3 Charcuteros',
-                        image: 'https://img.freepik.com/foto-gratis/pizza-hawaiana_1203-2455.jpg',
+                        image: 'https://estudioguacamaya.github.io/pizzaslove/assets/img/pizza-love.png',
                         prices: { small: 6.00, large: 11.00, family: 15.00 }
                     },
                     {
                         id: 'chicken',
                         name: 'Chicken Lovee',
                         description: 'Base + Salsa + Queso + Pollo + Extra Queso + Champiñones + 1 Vegetal',
-                        image: 'https://w7.pngwing.com/pngs/44/809/png-transparent-california-style-pizza-sicilian-pizza-chicken-fingers-pizza-hut-chicken-pizza-food-recipe-chicken-meat-thumbnail.png',
+                        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuGJuPMf3eiBuTBIZBj6kV6m8WNfsjGwxLsw&s',
                         prices: { small: 6.00, large: 11.00, family: 15.00 }
                     },
                     {
                         id: 'charcutera',
                         name: 'Pizza Charcutera',
                         description: 'Base + Salsa + Queso + 5 Charcuteros a elección',
-                        image: 'https://pizzasartesanales.es/wp-content/uploads/2020/09/pizza-barbacoa-1-1200x900.jpg',
+                        image: 'https://estudioguacamaya.github.io/pizzaslove/assets/img/pizza-charcutera.png',
                         prices: { small: 7.00, large: 12.00, family: 17.00 }
                     }
                 ]
@@ -2512,14 +2542,14 @@
             function renderPizzas() {
                 const container = document.getElementById('pizzas-container-grid');
                 if (!container) return;
-                
+
                 container.innerHTML = menuData.pizzas.map(pizza => {
                     // Encontrar precio más bajo para "Desde $X"
                     let lowestPrice = Infinity;
-                    if(pizza.prices.small) lowestPrice = Math.min(lowestPrice, pizza.prices.small);
-                    if(pizza.prices.large) lowestPrice = Math.min(lowestPrice, pizza.prices.large);
-                    if(pizza.prices.family) lowestPrice = Math.min(lowestPrice, pizza.prices.family);
-                    
+                    if (pizza.prices.small) lowestPrice = Math.min(lowestPrice, pizza.prices.small);
+                    if (pizza.prices.large) lowestPrice = Math.min(lowestPrice, pizza.prices.large);
+                    if (pizza.prices.family) lowestPrice = Math.min(lowestPrice, pizza.prices.family);
+
                     return `
                     <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center product-card h-full justify-between">
                         <div class="w-full">
@@ -2573,7 +2603,7 @@
                 // Render Tamaños
                 const sizesContainer = document.getElementById('modal-sizes-container');
                 sizesContainer.innerHTML = '';
-                
+
                 const sizeLabels = {
                     small: 'Pequeña (25cm - 4 Porc.)',
                     large: 'Grande (33cm - 8 Porc.)',
@@ -2635,7 +2665,7 @@
 
                 const checkboxes = document.querySelectorAll('.extra-checkbox:checked');
                 currentModalState.selectedExtras = []; // Reset y reconstruir
-                
+
                 checkboxes.forEach(cb => {
                     extrasTotal += parseFloat(cb.dataset.price);
                     currentModalState.selectedExtras.push({
@@ -2668,7 +2698,7 @@
             closePersonalizacionModalBtn.addEventListener('click', () => {
                 personalizacionModal.style.display = 'none';
             });
-            
+
             // Click fuera del modal para cerrar
             window.addEventListener('click', (event) => {
                 if (event.target === personalizacionModal) {
@@ -2684,7 +2714,7 @@
                     large: 'Grande',
                     family: 'Familiar'
                 };
-                
+
                 // Calcular precio unitario base + extras
                 const basePrice = pizza.prices[currentModalState.size];
                 const extrasTotal = currentModalState.selectedExtras.reduce((sum, ex) => sum + ex.price, 0);
